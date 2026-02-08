@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/leoknox/data/C-study/study/C/C-Code/3_basic_demo_1/3_basic_demo'
+relocations:     []
+...
