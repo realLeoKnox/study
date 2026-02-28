@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo's INDEX</title>
+    <link rel="stylesheet" href="./css.css">
+    <!-- 引入 Three.js 核心库 (通过 CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- 引入 FontAwesome 图标库 (免费版) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- 3D 粒子背景的幕布 -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- 超酷的鼠标跟随发光体 (会跟 JS 配合互动) -->
+    <div id="cursor-glow"></div>
+
+    <!-- 引入刚刚编写的 js 控制器 -->
+    <!-- 把所有页面包裹在一个大盒子里，用于整体上下移动 -->
+    <div id="fullpage-wrapper">
+        <!-- 第一页：限制页面宽度的居中容器盒子 -->
+        <div class="container">
+
+            <!-- 关于我 -->
+            <section class="about-me">
+                <div class="avatar-box">
+                    <img src="../pic/avata1r.png" alt="Leo's Avatar"> <!-- Fixed relative path -->
+                </div>
+                <h1>Hi, I'm Leo 👋</h1>
+                <br>
+                <div class="about-me-content">
+                    <p>Welcome to my personal homepage. I am constantly learning and exploring.</p>
+                    <p>Since I was in primary school, I've had a strong interest in the internet, and I always dreamed
+                        of having my own website.</p>
+                    <p>In middle school, I got my first exposure to "surrogate brush networks" and virtual hosts in QQ
+                        groups, and that's when a new world opened up for me.</p>
+                    <p>I remember buying my first VPS from an unreliable "one-man" seller in a QQ group. At that time,
+                        he even charged me 30 yuan just to install a control panel. Haha 😂</p>
+                    <p>As for me now... well, it seems like I know a lot, but at the same time, it feels like I don't
+                        know anything at all. 😭</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- 第二页 -->
+        <div class="container_2">
+            <!-- 技能展示 -->
+            <section class="sites">
+                <h2>My Projects</h2>
+                <!-- 包含四个并排盒子的父盒子 -->
+                <section class="sites-section">
+                    <a class="site-box" href="https://www.leoknox.de" target="_blank" rel="noopener noreferrer">
+                        <h3><i class="fa-solid fa-image"></i> Leo's Image Host</h3>
+                        <p>Image Hosting Service</p>
+                    </a>
+                    <a class="site-box" href="https://www.leoknox.de" target="_blank" rel="noopener noreferrer">
+                        <h3><i class="fa-solid fa-pen-nib"></i> Leo's WP</h3>
+                        <p>Random thoughts & records</p>
+                    </a>
+                    <a class="site-box" href="https://www.leoknox.de" target="_blank" rel="noopener noreferrer">
+                        <h3><i class="fa-solid fa-server"></i> Leo's Agent</h3>
+                        <p>Server Monitoring</p>
+                    </a>
+                    <a class="site-box" href="https://www.leoknox.de" target="_blank" rel="noopener noreferrer">
+                        <h3><i class="fa-solid fa-lock"></i> Vaultwarden</h3>
+                        <p>Password Management</p>
+                    </a>
+                </section>
+            </section>
+        </div>
+
+        <!-- 第三页 -->
+        <div class="container_3">
+            <!-- 联系方式 -->
+            <section class="connect-me">
+                <h2>Connect Me</h2>
+                <!-- 包含四个并排盒子的父盒子 -->
+                <section class="connect-me-section">
+                    <a class="connect-me-phone" href="tel:+15866666588">
+                        <h3><i class="fa-solid fa-phone"></i> Phone</h3>
+                        <p>+1 5866666588</p>
+                    </a>
+                    <a class="connect-me-mail" href="mailto:leo@leoknox.de">
+                        <h3><i class="fa-solid fa-envelope"></i> Email</h3>
+                        <p>leo@leoknox.de</p>
+                    </a>
+                    <a class="connect-me-tg" href="https://t.me/realLeoKnox" target="_blank" rel="noopener noreferrer">
+                        <h3><i class="fa-brands fa-telegram"></i> Telegram</h3>
+                        <p>@realLeoKnox</p>
+                    </a>
+                    <a class="connect-me-ns" href="https://www.nodeseek.com/notification#/message?mode=talk&to=26676"
+                        target="_blank" rel="noopener noreferrer">
+                        <h3><i class="fa-solid fa-globe"></i> NodeSeek</h3>
+                        <p>Donald2018</p>
+                    </a>
+                </section>
+            </section>
+        </div>
+    </div> <!-- fullpage-wrapper 结束 -->
+
+    <!-- 最后引入 JavaScript 文件，接管滚动体验 -->
+    <script src="./js.js"></script>
+</body>
+
+</html>

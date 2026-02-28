@@ -1,0 +1,365 @@
+/* 1. 基础设置与核心概念：box-sizing */
+/* 
+   默认情况下，盒子的总宽度 = 设定的width + padding(左右) + border(左右)
+   例如：width: 100px, padding: 20px, border: 5px。 总宽度是 150px!
+   
+   下面这行代码是非常重要的现代网页设计技巧。
+   border-box 意味着：你设置的 width 就是最终宽度！
+   padding 和 border 会在内部“向内挤压”内容空间，而不会向外撑大整个盒子。
+   这会让页面布局变得简单可控得多。
+*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    /* 清除浏览器自带的所有默认外边距 */
+    padding: 0;
+    /* 清除浏览器自带的所有默认内边距 */
+    user-select: none;
+    /* 禁用文本选中 (标准语法) */
+    -webkit-user-select: none;
+    /* 禁用文本选中 (Safari 等 Webkit 内核浏览器) */
+}
+
+body {
+    /* 移除之前的径向渐变，因为我们要用 Three.js 当纯背景了，保留一个最底层的深色兜底 */
+    background-color: #0d0b0b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    /* 移除原生滚动条特性，我们将使用 JavaScript 接管 */
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Three.js 的 3D 画布容器 */
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    /* 永远垫在所有内容的最后面 */
+}
+
+/* 这是一个包裹所有页面的大皮套，JS 会改变它往上提的距离 */
+#fullpage-wrapper {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    /* 定位使其能使用 z-index */
+    z-index: 10;
+    /* 把内容层级提到最高，压在光效上面 */
+    transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+    /* 平滑、带阻尼感的过渡动画 */
+}
+
+
+/* 3. 两页共同的主体内容容器 */
+.container,
+.container_2,
+.container_3 {
+    max-width: 1000px;
+    width: 100%;
+    height: 100vh;
+    /* 恢复为固定视口高度，因为这是“一整页”的概念 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px 5%;
+    /* 当单页内容过多时，允许在单页内部出现滚动条，但不影响外层分页 (这是针对小屏幕的核心修复) */
+    overflow-y: auto;
+    /* 隐藏内部滚动条，让视觉更干净 (Chrome/Safari) */
+}
+
+/* 隐藏滚动条 */
+.container::-webkit-scrollbar,
+.container_2::-webkit-scrollbar {
+    display: none;
+}
+
+.about-me {
+    position: relative;
+    padding: 50px;
+    /* 进一步增加内边距，让盒子看起来更大气 */
+    width: 100%;
+    /* 让盒子本身撑满相对父容器 .container 的宽度 */
+    max-width: 750px;
+    /* 稍微放宽限制，让文字有更多呼吸空间 */
+    /* 限制宽度，防止长句子阅读疲劳 */
+    margin: 40px auto;
+    background: rgba(40, 40, 40, 0.7);
+    /* 加深一点背景，提升对比度 */
+    backdrop-filter: blur(12px);
+    /* 强化毛玻璃感 */
+    border-radius: 30px;
+    /* 圆角跟随盒子变大稍微增加一点 */
+    /* 更圆润的角显得更现代 */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.avatar-box {
+    position: absolute;
+    top: 25px;
+    right: 100px;
+    width: 125px;
+    height: 125px;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.avatar-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-me h1 {
+    font-size: 2.2rem;
+    margin-bottom: 24px;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    /* 标题渐变色 */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-me-content p {
+    line-height: 1.8;
+    /* 关键：增加行高，让文字不拥挤 */
+    margin-bottom: 18px;
+    /* 替代 <br>，控制段落间距 */
+    color: rgba(255, 255, 255, 0.9);
+    /* 稍微降低纯白亮度，保护视力 */
+    font-weight: 300;
+    /* 使用细体字更显高级 */
+    letter-spacing: 0.5px;
+    /* 字间距微调 */
+}
+
+.sites,
+.connect-me {
+    width: 100%;
+    max-width: 750px;
+    /* 和上面的卡片保持相同的宽度比例 */
+    /* 限制宽度，防止长句子阅读疲劳 */
+    margin: 40px auto;
+    padding: 50px;
+    /* 增加内边距 */
+    background: rgba(40, 40, 40, 0.7);
+    /* 加深一点背景，提升对比度 */
+    backdrop-filter: blur(12px);
+    /* 强化毛玻璃感 */
+    border-radius: 30px;
+    /* 更圆润的角显得更现代 */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* 5. 技能展示与联系方式卡片父容器 - 包含多个子盒子的父盒子 */
+.sites-section,
+.connect-me-section {
+    display: flex;
+    flex-wrap: wrap;
+    /* 允许换行，防止盒子被过度挤压 */
+    /* 使用 flex 布局让里面的子盒子并排横向显示 */
+    gap: 20px;
+    /* flex 的一个很有用的属性，设置子元素之间的空白间隙，无需复杂的 margin 计算 */
+    margin-top: 20px;
+    /* 距离上面的标题保留间距 */
+}
+
+/* 卡片盒子统一基础样式 */
+.site-box,
+.connect-me-phone,
+.connect-me-mail,
+.connect-me-tg,
+.connect-me-ns {
+    background: rgba(255, 255, 255, 0.05);
+    /* 配合深色主题，使用半透明白色产生玻璃质感 */
+    padding: 25px;
+    /* 把卡片撑得更丰满 */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    /* 稍微圆润一些，匹配父容器的 24px */
+    flex: 1;
+    min-width: 140px;
+    /* 原来是 120px，稍微增加最小宽度，卡片在手机上会更大气 */
+    /* 当屏幕变窄时，允许卡片换行，而不是无限挤压 */
+    text-align: center;
+    /* 文本居中对齐 */
+
+    /* 当作为 <a> 标签时，去掉默认下划线和颜色，并变为块级或者 Flex 元素以便充满空间 */
+    text-decoration: none;
+    color: inherit;
+    /* 继承父元素的颜色，不在变成默认的超级链接蓝色 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* 保证 <a> 标签不仅能撑大自己，内部的标题和段落也能绝对完美居中 */
+
+    /* 添加鼠标悬停效果 (Hover State) */
+    transition: transform 0.3s ease, background 0.3s ease;
+    /* 增加背景色过渡动画 */
+}
+
+/* 专门针对第三页联系卡片和第二页站点卡片的优化：加大最小宽度保证长文本不换行，桌面端自动形成 2x2 网格 */
+.site-box,
+.connect-me-phone,
+.connect-me-mail,
+.connect-me-tg,
+.connect-me-ns {
+    min-width: 200px;
+    /* 强制占据更多空间 */
+}
+
+/* 让里面的标题和文字稍微大一点 */
+.site-box h3,
+.connect-me-phone h3,
+.connect-me-mail h3,
+.connect-me-tg h3,
+.connect-me-ns h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.site-box p,
+.connect-me-phone p,
+.connect-me-mail p,
+.connect-me-tg p,
+.connect-me-ns p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.8);
+    word-break: break-word;
+    /* 允许在边缘根据单词换行，而不是把长邮箱硬生生从中切断 */
+}
+
+/* 当鼠标放上去时，调整外边距或者位移能让盒子“动”起来 */
+.site-box:hover,
+.connect-me-phone:hover,
+.connect-me-mail:hover,
+.connect-me-tg:hover,
+.connect-me-ns:hover {
+    transform: translateY(-5px);
+    /* 向上移动5像素 */
+    background: rgba(255, 255, 255, 0.15);
+    /* 悬停时稍微提亮背景 */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    /* 加深阴影 */
+}
+
+/* 标题里的图标和文字稍微拉开一点距离 */
+.site-box h3 i,
+.connect-me-phone h3 i,
+.connect-me-mail h3 i,
+.connect-me-tg h3 i,
+.connect-me-ns h3 i {
+    margin-right: 8px;
+    font-size: 1.1em;
+    /* 图标可以稍微大一丢丢 */
+}
+
+/* ========================================= */
+/* 7. 超酷的鼠标跟随光效                       */
+/* ========================================= */
+#cursor-glow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 50vw;
+    /* 光晕的大小 */
+    height: 50vw;
+    max-width: 600px;
+    /* 限制最大不要过大 */
+    max-height: 600px;
+    background: radial-gradient(circle, rgba(255, 126, 95, 0.25) 0%, rgba(254, 180, 123, 0.05) 50%, transparent 70%);
+    /* 渐变色光圈 */
+    border-radius: 50%;
+    pointer-events: none;
+    /* 穿透光圈鼠标依旧可以直接点击后面的文字 */
+    transform: translate(-50%, -50%);
+    /* 让圆心跟着光圈走 */
+    z-index: 1;
+    /* 图层位置：在深色背景(body)之上，内容区域(z-index: 10)之下 */
+    filter: blur(50px);
+    /* 让光像一团真正的柔光 */
+    opacity: 0;
+    /* 默认隐藏光圈 */
+    transition: opacity 0.5s ease;
+    /* 浮现和消失带有缓动效果 */
+}
+
+/* ========================================= */
+/* 6. 响应式设计 (媒体查询 Media Queries)    */
+/* 当屏幕宽度小于 768px (通常是手机或小平板) 时生效 */
+/* ========================================= */
+@media screen and (max-width: 768px) {
+
+    /* 1. 缩小容器内边距，给手机屏幕留更多显示空间 */
+    .container,
+    .container_2 {
+        padding: 40px 5%;
+        /* 增加上下留白，防止高度不够时盒子顶到最上方 */
+    }
+
+    /* 2. 调整两个主卡片：内边距变小，去掉圆角显得更贴合屏幕边缘 */
+    .about-me,
+    .sites,
+    .connect-me {
+        width: 100%;
+        padding: 40px 25px;
+        /* 上下空间稍微加大，左右适中 */
+        border-radius: 20px;
+        /* 稍微减小圆角 */
+        margin: 30px auto;
+        /* 增加上下外边距，不要贴着屏幕顶部和底部 */
+    }
+
+    /* 3. 修复头像：手机上右上角绝对定位容易和文字重叠，这里改为普通的块级居中流式布局 */
+    .avatar-box {
+        position: relative;
+        /* 取消绝对定位 */
+        top: 0;
+        right: 0;
+        margin: 0 auto 20px auto;
+        /* 居中并和下方标题保持距离 */
+        width: 100px;
+        /* 手机上头像稍微改小一点 */
+        height: 100px;
+    }
+
+    /* 4. 标题和小标题字体适当缩小 */
+    .about-me h1 {
+        font-size: 1.8rem;
+        text-align: center;
+        /* 标题也在手机上居中好看些 */
+    }
+
+    .sites h2,
+    .connect-me h2 {
+        text-align: center;
+        font-size: 1.6rem;
+    }
+
+    /* 5. 调整里面四个小卡片的间距和大小 */
+    .sites-section,
+    .connect-me-section {
+        gap: 15px;
+    }
+
+    .site-box,
+    .connect-me-phone,
+    .connect-me-mail,
+    .connect-me-tg,
+    .connect-me-ns {
+        padding: 15px;
+        min-width: 130px;
+        /* 一排能放下两个的理想宽度 */
+    }
+}

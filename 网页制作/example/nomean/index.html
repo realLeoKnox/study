@@ -1,0 +1,20 @@
+<script>
+    // 1. 获取浏览器主语言偏好
+    // navigator.languages[0] 获取用户首选语言列表的第一项
+    // navigator.language 获取当前界面语言
+    const userLang = (navigator.languages && navigator.languages[0]) ||
+        navigator.language ||
+        'en'; // 如果都没获取到，默认给英文
+
+    // 2. 统一转为小写进行判断，防止大小写差异
+    const lowerLang = userLang.toLowerCase();
+
+    // 3. 执行跳转逻辑
+    if (lowerLang.startsWith('zh')) {
+        // 匹配 zh-CN, zh-TW, zh-HK, zh-SG 等所有中文
+        window.location.href = "/cn/index.html";
+    } else {
+        // 匹配德语(de)、法语(fr)、日语(ja)等所有其他语言
+        window.location.href = "/en/index.html";
+    }
+</script>

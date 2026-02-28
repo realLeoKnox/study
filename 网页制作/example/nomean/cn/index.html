@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo's INDEX</title>
+    <link rel="stylesheet" href="css.css">
+    <!-- 引入 Three.js 核心库 (通过 CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- 引入 FontAwesome 图标库 (免费版) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- 3D 粒子背景的幕布 -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- 超酷的鼠标跟随发光体 (会跟 JS 配合互动) -->
+    <div id="cursor-glow"></div>
+
+    <!-- 引入刚刚编写的 js 控制器 -->
+    <!-- 把所有页面包裹在一个大盒子里，用于整体上下移动 -->
+    <div id="fullpage-wrapper">
+        <!-- 第一页：限制页面宽度的居中容器盒子 -->
+        <div class="container">
+
+            <!-- 关于我 -->
+            <section class="about-me">
+                <div class="avatar-box">
+                    <img src="../pic/avata1r.png" alt="Leo's Avatar">
+                </div>
+                <h1>你好，我是Leo👋</h1>
+                <br>
+                <div class="about-me-content">
+                    <p>欢迎来到我的个人主页。我正在不断学习中。</p>
+                    <p>从小学的时候，我就对互联网产生了浓厚的兴趣，那时候的我对拥有一个属于自己的网站非常向往。</p>
+                    <p>初中的时候在QQ群里初次接触到了“代刷网“和虚拟主机，于是我的大门被打开了。</p>
+                    <p>记得我的第一个vps也是在QQ群里的野鸡oneman手里购买的，当时对方帮忙安装一个宝塔还收了我30哈哈😂</p>
+                    <p>现在的我，怎么说呢，好像会的挺多，但又好像啥都不会😭</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- 第二页 -->
+        <div class="container_2">
+            <!-- 技能展示 -->
+            <section class="sites">
+                <h2>我的站点</h2>
+                <!-- 包含四个并排盒子的父盒子 -->
+                <section class="sites-section">
+                    <a class="site-box" href="https://www.leoknox.de" target="_blank" rel="noopener noreferrer">
+                        <h3><i class="fa-solid fa-image"></i> Leo的小图床</h3>
+                        <p>图片托管服务</p>
+                    </a>
+                    <a class="site-box" href="https://www.leoknox.de" target="_blank" rel="noopener noreferrer">
+                        <h3><i class="fa-solid fa-pen-nib"></i> Leoのwp</h3>
+                        <p>记录乱七八糟的东西</p>
+                    </a>
+                    <a class="site-box" href="https://www.leoknox.de" target="_blank" rel="noopener noreferrer">
+                        <h3><i class="fa-solid fa-server"></i> Leo's Agent</h3>
+                        <p>节点监控</p>
+                    </a>
+                    <a class="site-box" href="https://www.leoknox.de" target="_blank" rel="noopener noreferrer">
+                        <h3><i class="fa-solid fa-lock"></i> Valutwarden</h3>
+                        <p>密码管理</p>
+                    </a>
+                </section>
+            </section>
+        </div>
+
+        <!-- 第三页 -->
+        <div class="container_3">
+            <!-- 联系方式 -->
+            <section class="connect-me">
+                <h2>联系我</h2>
+                <!-- 包含四个并排盒子的父盒子 -->
+                <section class="connect-me-section">
+                    <a class="connect-me-phone" href="tel:+15866666588">
+                        <h3><i class="fa-solid fa-phone"></i> Phone</h3>
+                        <p>+1 5866666588</p>
+                    </a>
+                    <a class="connect-me-mail" href="mailto:leo@leoknox.de">
+                        <h3><i class="fa-solid fa-envelope"></i> Email</h3>
+                        <p>leo@leoknox.de</p>
+                    </a>
+                    <a class="connect-me-tg" href="https://t.me/realLeoKnox" target="_blank" rel="noopener noreferrer">
+                        <h3><i class="fa-brands fa-telegram"></i> Telegram</h3>
+                        <p>@realLeoKnox</p>
+                    </a>
+                    <a class="connect-me-ns" href="https://www.nodeseek.com/notification#/message?mode=talk&to=26676"
+                        target="_blank" rel="noopener noreferrer">
+                        <h3><i class="fa-solid fa-globe"></i> NodeSeek</h3>
+                        <p>Donald2018</p>
+                    </a>
+                </section>
+            </section>
+        </div>
+    </div> <!-- fullpage-wrapper 结束 -->
+
+    <!-- 最后引入 JavaScript 文件，接管滚动体验 -->
+    <script src="js.js"></script>
+</body>
+
+</html>
