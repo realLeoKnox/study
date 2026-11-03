@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    table{
+      border: 1px solid gray;
+      border-collapse: collapse;
+    }
+    td{
+      border: 1px solid gray;
+      width: 200px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+<table>
+  <tr>
+    <td>学生姓名：</td>
+    <td><input type="text"></td>
+  </tr>
+  <tr>
+    <td>密码：</td>
+    <td><input type="password"></td>
+  </tr>
+  <tr>
+    <td>性别：</td>
+    <td>
+      <input type="radio" name="gender">男
+      <input type="radio" name="gender">女
+    </td>
+  </tr>
+  <tr>
+    <td>个人爱好：</td>
+    <td>
+      <input type="checkbox" name="hobby" id="">音乐
+      <input type="checkbox" name="hobby" id="">美术
+      <input type="checkbox" name="hobby" id="">电影
+    </td>
+  </tr>
+  <tr>
+    <td>交友目的：</td>
+    <td>
+        <select name="purpose" id="purpose" multiple>
+          <option value="普通朋友">普通朋友</option>
+          <option value="爱人">爱人</option>
+        </select>
+    </td>
+  </tr>
+  <tr>
+    <td>照片上传：</td>
+    <td>
+      <input type="file" name="" id="">
+    </td>
+  </tr>
+  <tr>
+    <td>个人简介：</td>
+    <td>
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+    </td>
+  </tr>
+  <tr>
+    <td>城市：</td>
+    <td>
+      <select>
+        <option value="">兴城</option>
+        <option value="">沈阳</option>
+        <option value="">大连</option>
+        <option value="喀什"></option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"></td>
+  </tr>
+
+</table>
+</body>
+</html>

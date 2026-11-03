@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>竖向导航菜单</title>
+    <style>
+        /* 去掉列表默认的圆点和缩进 */
+        .nav {
+            list-style: none;
+            margin: 40px auto;
+            padding: 0;
+            width: 220px;
+        }
+
+        /* a 默认是行内元素，改成 block 才能设置宽高 */
+        .nav a {
+            display: block;
+            height: 70px;
+            line-height: 70px;          /* 行高等于高度 → 文字垂直居中 */
+            text-align: center;         /* 文字水平居中 */
+            font-size: 24px;
+            letter-spacing: 2px;
+            color: #333;
+            text-decoration: none;      /* 去掉链接下划线 */
+            background-color: #ddd;     /* 灰色底 */
+            border-bottom: 2px solid #333;  /* 每项下面一条深色线 */
+        }
+
+        /* 当前项和鼠标经过：深色底 + 红字 */
+        .nav .active,
+        .nav a:hover {
+            background-color: rgba(30, 20, 20, 0.95);
+            color: #e8432e;
+        }
+
+        /* 选做：右上角的斜线装饰，用渐变画出来，不需要图片 */
+        .nav .active {
+            background-image: linear-gradient(135deg,
+                transparent 85%, #888 85%, #888 86%, transparent 86%);
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li><a href="#" class="active">企业简介</a></li>
+        <li><a href="#">品牌历程</a></li>
+        <li><a href="#">荣誉资质</a></li>
+        <li><a href="#">服务指南</a></li>
+    </ul>
+</body>
+</html>
