@@ -6,7 +6,7 @@ public class Test {
         Car car1 = new Car();
 
         car.color = "red";
-        car.speed = 180;
+        //car.speed = 180;
 
         car.fly("black");
 
