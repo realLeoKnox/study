@@ -1,0 +1,103 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .footer {
+      font-size: 14px;
+      color: #9F582C;
+    }
+    li{
+      float: left;
+      list-style: none;
+    }
+    .footer_top{
+      height: 35px;
+      background-color: #000000;
+      line-height: 35px;
+
+    }
+    .footer_top a{
+      color: #9F582C;
+      text-decoration: none;
+    }
+    .footer_top_cen{
+      width: 980px;
+      margin: 0 auto;
+    }
+    .footer_top_cen_left{
+      float: left;
+    }
+    .footer_top_cen_right{
+      float: right;
+      letter-spacing: 15px;
+    }
+    .footer_btm{
+      height: 170px;
+      background-color: #4A311B;
+    }
+    .footer_btm_cen{
+      margin: 0 auto;
+      width: 980px;
+    }
+    .footer_btm_cen_left{
+      padding-top: 10px;
+    }
+    .footer_btm_cen_left div{
+      float: left;
+    }
+    .footer_btm_cen_left_2{
+      padding-right: 150px;
+      padding-top: 25px;
+    }
+  </style>
+</head>
+<body>
+<div class="footer">
+  <div class="footer_top">
+    <div class="footer_top_cen">
+      <div class="footer_top_cen_left">
+        <li><a href="">首页</a>|</li>
+        <li><a href="">关于圣华</a>|</li>
+        <li><a href="">新闻中心</a>|</li>
+        <li><a href="">产品中心</a>|</li>
+        <li><a href="">圣华工艺</a>|</li>
+        <li><a href="">特色服务</a>|</li>
+        <li><a href="">招商加盟</a>|</li>
+        <li><a href="">联系我们</a>|</li>
+      </div>
+      <div class="footer_top_cen_right">
+        百年圣华
+        锻木成金
+      </div>
+    </div>
+
+  </div>
+  <div class="footer_btm">
+    <div class="footer_btm_cen">
+      <div class="footer_btm_cen_left">
+        <div class="footer_btm_cen_left_1">
+          <p>版权：北京圣华家具有限公司 All Right Reserved</p>
+          <p>电话：010-80701888 招商专线：138-1117-3666</p>
+          <p>地址：北京市昌平区沙河镇七里漠北村工业园区419号</p>
+          <p>ICP备案编号：京ICP备1234567890号 技术支持：科诺威</p>
+        </div>
+        <div class="footer_btm_cen_left_2">
+          <img src="../class13/images/a1.jpg" alt="">
+        </div>
+        <div class="footer_btm_cen_left_3"></div>
+      </div>
+      <div class="footer_btm_cen_right">
+
+      </div>
+    </div>
+  </div>
+
+
+</div>
+</body>
+</html>
+
+```
