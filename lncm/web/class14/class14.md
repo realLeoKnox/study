@@ -306,3 +306,63 @@ li { float: left; list-style: none; }                /* 和 header 一样：横�
 6. **`<a>` 的颜色不继承**：想改链接颜色，要单独给 `a` 设置，并用 `text-decoration: none` 去掉下划线。
 7. **`border-collapse` 只对表格有效**，不要用在 `div` 上。
 8. **`padding` 不能为负数**，`margin` 可以。
+9. **别给图片再套一层白框**：图片自己带白边时，外面再加 `background` + `border` 会叠成两层白边（见下面第八节）。
+
+---
+
+## 八、补记：二维码四周白边太厚（Class 15 发现，Class 14 页脚遗留）
+
+### 1. 遇到的问题
+
+页脚做完二维码以后，二维码四周总有一圈厚厚的白边，像套了两层白框。这是我做 Class 14 页脚时留下的问题，到 Class 15 合并 header 和 footer 时才发现。
+
+### 2. 原因（实测）
+
+当时直接用了别人写的 `.qr` 样式：
+
+```css
+.qr{
+  width: 88px;
+  height: 88px;
+  background-color: #ffffff;       /* 白底 */
+  border: 2px solid #ffffff;       /* 又一圈白边 */
+  border-radius: 6px;
+  ...
+}
+.qr img{ width: 100%; height: 100%; display: block; }
+```
+
+问题出在**图片本身**，我没有先看图片长什么样：
+
+- `rw1.jpg`、`rw2.jpg` 都是 **90×90** 的图片，本身就是一张**带圆角的白色卡片**：四周自带约 **4px 白色留白**（二维码的静区），四个角是和页脚背景同色的深棕。
+- `.qr` 盒子是 88px，`border: 2px` 占掉两边各 2px，里面的图片被 `width: 100%` **缩成 84×84**。
+- 结果：图片自带的 4px 白边 + CSS 加的 2px 白边框 + 白底 → **白边叠了两层**，图片还被缩小了。
+
+### 3. 修复
+
+| | 修改前 | 修改后 |
+| --- | --- | --- |
+| `width` / `height` | `88px` | `90px`（等于图片原始大小） |
+| `background-color` | `#ffffff` | 删除 |
+| `border` | `2px solid #ffffff` | 删除 |
+| `border-radius` | `6px` | 删除 |
+| 图片实际大小 | 84×84（被缩小） | 90×90（原样） |
+
+`.qr img` 不用改，它是 `width: 100%`，现在刚好等于 90px。
+
+> 图片自带的那圈约 4px 白边**不能再去掉**：二维码需要这圈留白才扫得出来。
+
+### 4. 受影响的文件
+
+| 文件 | 情况 |
+| --- | --- |
+| `class14/footer.html` | 有问题，已修复 |
+| `class15/and/headerandfooter.html` | 有问题（合并时带过来的），已修复 |
+| `class15/hebing/hebing.html`、`hebing.md` | 之前已改好，补了注释 |
+| `class14/homework/footer.html` | 二维码直接用 `<img>`，没有 `.qr`，不受影响 |
+
+### 5. 教训
+
+- 套用别人的 CSS 之前，先看**素材图片本身**长什么样；图片已经有的效果，CSS 不用再加一遍。
+- 排查白边、间距这类问题，先用开发者工具量一下盒子的实际大小（这次就是量出了 88px 的盒子里图片只有 84px）。
+- 修改之后在文件里用注释记下原因，这样以后别人（或自己）不会再改回去。

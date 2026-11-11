@@ -47,9 +47,48 @@
     .footer_btm_cen_left div{
       float: left;
     }
+    .footer_btm_cen_left_1 {
+      width: 340px;
+      margin-right: 100px;
+    }
     .footer_btm_cen_left_2{
-      padding-right: 150px;
-      padding-top: 25px;
+      padding-right: 20px;
+      border-right: 1px solid #9F582C;
+      height: 100px;
+    }
+    .footer_btm_cen_left_3{
+      padding-left: 20px;
+    }
+    /* ===== 二维码白边问题（class14 遗留，class15 发现并修复）=====
+       现象：二维码四周白边很厚，像套了两层白框。
+       原因：rw1.jpg / rw2.jpg 本身就是 90×90 的白色圆角卡片，自带约 4px 白色留白（二维码的静区，不能去掉）；
+             原来的 .qr 又写了 background-color:#fff + border:2px solid #fff + border-radius:6px，
+             而且宽高 88px，图片被 width:100% 缩成 84px → 白边叠了两层。
+       解决：删掉 background-color、border、border-radius 三行，宽高改成图片原始尺寸 90px，图片原样显示。
+       教训：套别人的 CSS 之前，先看图片本身长什么样；样式是"补"出来的，不是越多越好。 */
+    .qr{
+      width: 90px;
+      height: 90px;
+      text-align: center;
+      color: #bbbbbb;
+      font-size: 12px;
+    }
+    .qr img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .qr_text{
+      margin-left: 8px;
+      padding-top: 10px;
+    }
+    .qr_text p{
+      line-height: 28px;
+    }
+    .qr_text em{
+      color: #ff0000;
+      font-style: normal;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -84,7 +123,18 @@
           <p>ICP备案编号：京ICP备1234567890号 技术支持：科诺威</p>
         </div>
         <div class="footer_btm_cen_left_2">
-          <img src="../class13/images/a1.jpg" alt="">
+          <div class="qr"><img src="homework/fa027a4d81d0a0e433755035e86d54f9.jpg" alt=""></div>
+          <div class="qr_text">
+            <p>请扫描左侧二维码</p>
+            <p>关注圣华家具微信</p>
+          </div>
+        </div>
+        <div class="footer_btm_cen_left_3">
+          <div class="qr"><img src="homework/2de30c72d70008cbef7185717de1de71.jpg" alt=""></div>
+          <div class="qr_text">
+            <p>手机扫二维码关注官方微博</p>
+            <p>点击“<em>圣华家具</em>”直接进入</p>
+          </div>
         </div>
         <div class="footer_btm_cen_left_3"></div>
       </div>

@@ -83,4 +83,13 @@ div { width:220px; height:100px; background-color:#777;
 - ✗ margin 是合并，不是相加
 - ✗ 标准椭圆用 `50%`
 - ✗ `li` 应放在 `ul` 里，课堂代码不规范
+- ✗ 图片自带白边，别再加 `background` + `border`，会叠成两层白边
 - 怎么清除浮动：老师还没讲
+
+## 八、补记：二维码白边（Class 15 发现）
+
+- 现象：二维码四周白边太厚
+- 原因：图片 `rw1.jpg` / `rw2.jpg` 是 90×90 的白色圆角卡片，**自带约 4px 白边**；`.qr` 又加了 `background:#fff` + `border:2px solid #fff` + `border-radius:6px`，宽高 88px，图片被缩成 84px → 白边叠两层
+- 修复：删掉 `background-color`、`border`、`border-radius`，宽高改成 `90px`（图片原始大小）
+- 图片自带的 4px 留白是二维码的静区，不能再去掉
+- 教训：套别人的 CSS 之前，先看图片本身长什么样
