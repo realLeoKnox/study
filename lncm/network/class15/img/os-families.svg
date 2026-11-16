@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="242" viewBox="0 0 720 242" role="img">
+<defs><marker id="os-families-a" viewBox="0 0 8 8" markerWidth="7" markerHeight="7" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#176779"/></marker></defs><rect width="720" height="242" fill="#fff"/>
+<rect x="16" y="85" width="150" height="46" rx="5" fill="#edf4f5" stroke="#94b2ba"/>
+<text x="91.0" y="114.0" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="18" fill="#20323b" font-weight="700">早期 UNIX</text>
+<rect x="264" y="23" width="181" height="46" rx="5" fill="#edf4f5" stroke="#94b2ba"/>
+<text x="354.5" y="52.0" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="18" fill="#20323b" font-weight="700">BSD 系统传统</text>
+<rect x="527" y="23" width="176" height="46" rx="5" fill="#edf4f5" stroke="#94b2ba"/>
+<text x="615.0" y="52.0" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="18" fill="#20323b" font-weight="700"><tspan x="615" y="43" font-size="15">FreeBSD / NetBSD</tspan><tspan x="615" y="61" font-size="15">OpenBSD</tspan></text>
+<rect x="264" y="85" width="181" height="46" rx="5" fill="#edf4f5" stroke="#94b2ba"/>
+<text x="354.5" y="114.0" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="18" fill="#20323b" font-weight="700">Darwin / XNU</text>
+<rect x="527" y="85" width="176" height="46" rx="5" fill="#edf4f5" stroke="#94b2ba"/>
+<text x="615.0" y="114.0" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="18" fill="#20323b" font-weight="700">macOS</text>
+<rect x="264" y="160" width="181" height="46" rx="5" fill="#edf4f5" stroke="#94b2ba"/>
+<text x="354.5" y="189.0" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="18" fill="#20323b" font-weight="700">Linux 内核</text>
+<rect x="527" y="160" width="176" height="46" rx="5" fill="#edf4f5" stroke="#94b2ba"/>
+<text x="615.0" y="189.0" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="18" fill="#20323b" font-weight="700">Debian、RHEL 等</text>
+<path d="M167 98 L263 49" stroke="#176779" stroke-width="1.65" fill="none"  marker-end="url(#os-families-a)"/>
+<path d="M446 46 L526 46" stroke="#176779" stroke-width="1.65" fill="none"  marker-end="url(#os-families-a)"/>
+<path d="M446 108 L526 108" stroke="#176779" stroke-width="1.65" fill="none"  marker-end="url(#os-families-a)"/>
+<path d="M354 70 L354 83" stroke="#176779" stroke-width="1.65" fill="none"  marker-end="url(#os-families-a)"/>
+<path d="M167 121 L262 181" stroke="#176779" stroke-width="1.65" fill="none" stroke-dasharray="6 5" marker-end="url(#os-families-a)"/>
+<path d="M446 183 L526 183" stroke="#176779" stroke-width="1.65" fill="none"  marker-end="url(#os-families-a)"/>
+<text x="209" y="164" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="14" fill="#20323b" font-weight="400">类 UNIX</text>
+<text x="360" y="232" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="15" fill="#20323b" font-weight="400">Darwin / XNU 还结合了 Mach 技术。</text>
+</svg>
