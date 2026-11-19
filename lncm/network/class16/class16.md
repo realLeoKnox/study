@@ -102,7 +102,7 @@ flowchart TB
 
 **LSW1：** `display port vlan` 截图确认 E0/0/1、E0/0/2 为 Trunk，PVID 1，允许 VLAN 1、10、20；`display vlan` 确认 VLAN 10、20 已创建、两个接口为 tagged 成员。
 
-随后 LS W2 / LSW3 也完成配置，三窗口截图同时展示各交换机的 `display vlan`、`display port vlan`：
+随后 LSW2 / LSW3 也完成配置，三窗口截图同时展示各交换机的 `display vlan`、`display port vlan`：
 
 | 设备 | E0/0/1 | E0/0/2 | E0/0/3 | E0/0/4 |
 |---|---|---|---|---|
