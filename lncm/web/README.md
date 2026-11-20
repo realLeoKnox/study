@@ -4,26 +4,26 @@
 
 | 课次 | 内容 | 手抄版 | PDF |
 |---|---|---|---|
-| 1 | [HTML 基础标签](class1/class1.md) | [手抄](class1/class1-手抄版.md) | — |
-| 2 | [HTML 文本与基础布局标签](class2/class2.md) | [手抄](class2/class2-手抄版.md) | — |
-| 3 | [文本格式化与超链接](class3/class3.md) | [手抄](class3/class3-手抄版.md) | — |
-| 4 | [HTML 注释、页内定位与列表](class4/class4.md) | [手抄](class4/class4-手抄版.md) | — |
-| 5 | [HTML 表格](class5/class5.md) | [手抄](class5/class5-手抄版.md) | — |
-| 6 | [网页图片与多媒体](class6/class6.md) | [手抄](class6/class6-手抄版.md) | — |
-| 7 | [HTML 表单与常用控件](class7/class7.md) | [手抄](class7/class7-手抄版.md) | — |
-| 8 | [表单补充与更多输入类型](class8/class8.md) | [手抄](class8/class8-手抄版.md) | — |
-| 9 | [CSS 入门、选择器与文字样式](class9/class9.md) | [手抄](class9/class9-手抄版.md) | — |
-| 10 | [文章页面的 CSS 排版](class10/class10.md) | [手抄](class10/class10-手抄版.md) | — |
-| 11 | [文章页面综合练习](class11/class11.md) | [手抄](class11/class11-手抄版.md) | — |
-| 12 | [文本外观、显示模式与链接伪类](class12/class12.md) | [手抄](class12/class12-手抄版.md) | — |
-| 13 | [浮动 float 与导航栏案例](class13/class13.md) | [手抄](class13/class13-手抄版.md) | — |
-| 14 | [盒子模型（边框、圆角、内外边距）与页脚案例](class14/class14.md) | [手抄](class14/class14-手抄版.md) | — |
-| 15 | [CSS 背景，以及 header + banner + footer 合并页](class15/class15.md) | [手抄](class15/class15-手抄版.md) | — |
-| 16 | [JavaScript 入门与引入方式](class16/class16.md) | [手抄](class16/class16-手抄版.md) | [PDF](class16/Web前端笔记-第十六课.pdf) · [手抄 PDF](class16/Web前端笔记-第十六课-手抄版.pdf) |
+| 1 | [HTML 基础标签](class1/class1.md) | [手抄](class1/class1-手抄版.md) | [PDF](class1/Web前端笔记-第一课.pdf) |
+| 2 | [HTML 文本与基础布局标签](class2/class2.md) | [手抄](class2/class2-手抄版.md) | [PDF](class2/Web前端笔记-第二课.pdf) |
+| 3 | [文本格式化与超链接](class3/class3.md) | [手抄](class3/class3-手抄版.md) | [PDF](class3/Web前端笔记-第三课.pdf) |
+| 4 | [HTML 注释、页内定位与列表](class4/class4.md) | [手抄](class4/class4-手抄版.md) | [PDF](class4/Web前端笔记-第四课.pdf) |
+| 5 | [HTML 表格](class5/class5.md) | [手抄](class5/class5-手抄版.md) | [PDF](class5/Web前端笔记-第五课.pdf) |
+| 6 | [网页图片与多媒体](class6/class6.md) | [手抄](class6/class6-手抄版.md) | [PDF](class6/Web前端笔记-第六课.pdf) |
+| 7 | [HTML 表单与常用控件](class7/class7.md) | [手抄](class7/class7-手抄版.md) | [PDF](class7/Web前端笔记-第七课.pdf) |
+| 8 | [表单补充与更多输入类型](class8/class8.md) | [手抄](class8/class8-手抄版.md) | [PDF](class8/Web前端笔记-第八课.pdf) |
+| 9 | [CSS 入门、选择器与文字样式](class9/class9.md) | [手抄](class9/class9-手抄版.md) | [PDF](class9/Web前端笔记-第九课.pdf) |
+| 10 | [文章页面的 CSS 排版](class10/class10.md) | [手抄](class10/class10-手抄版.md) | [PDF](class10/Web前端笔记-第十课.pdf) |
+| 11 | [文章页面综合练习](class11/class11.md) | [手抄](class11/class11-手抄版.md) | [PDF](class11/Web前端笔记-第十一课.pdf) |
+| 12 | [文本外观、显示模式与链接伪类](class12/class12.md) | [手抄](class12/class12-手抄版.md) | [PDF](class12/Web前端笔记-第十二课.pdf) |
+| 13 | [浮动 float 与导航栏案例](class13/class13.md) | [手抄](class13/class13-手抄版.md) | [PDF](class13/Web前端笔记-第十三课.pdf) |
+| 14 | [盒子模型（边框、圆角、内外边距）与页脚案例](class14/class14.md) | [手抄](class14/class14-手抄版.md) | [PDF](class14/Web前端笔记-第十四课.pdf) |
+| 15 | [CSS 背景，以及 header + banner + footer 合并页](class15/class15.md) | [手抄](class15/class15-手抄版.md) | [PDF](class15/Web前端笔记-第十五课.pdf) |
+| 16 | [JavaScript 入门与引入方式](class16/class16.md) | [手抄](class16/class16-手抄版.md) | [PDF](class16/Web前端笔记-第十六课.pdf) |
 | 17 | [JavaScript 变量、类型、函数与对象](class17/class17.md) | [手抄](class17/class17-手抄版.md) | [PDF](class17/Web前端笔记-第十七课.pdf) |
 
 ## 说明
 
-- 第 16 课以前的课次没有 PDF，只有 Markdown 与手抄版。
+- 所有课次均有主 PDF；手抄版只保留 Markdown，不生成 PDF。
 - `backups/` 是第 12–15 课 Markdown 的原始备份，`sucai/` 是课上用的素材图片。
 - 各课的 `.html`、`.css`、`.js` 是当堂练习文件，`task*/` 与 `example/` 是示例与作业。
