@@ -131,6 +131,15 @@ typeof null;        // "object"，历史遗留现象
 
 `typeof null` 的结果容易误导，不能据此认为 `null` 是普通对象；判断数组可用 `Array.isArray(value)`。没有给 `typeof` 提供操作数是语法错误，原草稿里空的 `typeof()` 不能直接运行。
 
+### 补充：把结果写进页面
+
+`document.body.innerText` 可把文字直接写进 `<body>`：`=` 会替换页面原有内容，`+=` 会追加；课堂文件中这两行是注释，认识即可。
+
+```js
+// document.body.innerText = height+score+pi+v+f1 +"\n"
+// document.body.innerText += height+score+pi+v+f1
+```
+
 ## 常见错误
 
 1. 把 `number` 的整数与小数当成两种原始类型。
@@ -138,6 +147,7 @@ typeof null;        // "object"，历史遗留现象
 3. 认为 `const` 对象的属性永远不能修改。
 4. 用 `typeof` 判断数组或 `null` 的具体身份。
 5. 把 JavaScript 的对象字面量 `{ name: "张三" }` 直接当作 Java 的类实例；两种语言的对象模型不同。
+6. 误以为给 `innerText` 直接赋值是在追加内容；实际会覆盖页面原有内容。
 
 ## 本课小结
 

@@ -20,7 +20,7 @@
 | 14 | [盒子模型（边框、圆角、内外边距）与页脚案例](class14/class14.md) | [手抄](class14/class14-手抄版.md) | — |
 | 15 | [CSS 背景，以及 header + banner + footer 合并页](class15/class15.md) | [手抄](class15/class15-手抄版.md) | — |
 | 16 | [JavaScript 入门与引入方式](class16/class16.md) | [手抄](class16/class16-手抄版.md) | [PDF](class16/Web前端笔记-第十六课.pdf) · [手抄 PDF](class16/Web前端笔记-第十六课-手抄版.pdf) |
-| 17 | [JavaScript 变量、类型、函数与对象](class17/class17.md) | [手抄](class17/class17-手抄版.md) | [PDF](class17/Web前端笔记-第十七课.pdf) · [手抄 PDF](class17/Web前端笔记-第十七课-手抄版.pdf) |
+| 17 | [JavaScript 变量、类型、函数与对象](class17/class17.md) | [手抄](class17/class17-手抄版.md) | [PDF](class17/Web前端笔记-第十七课.pdf) |
 
 ## 说明
 
