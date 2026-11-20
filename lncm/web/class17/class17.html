@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // 1.变量
+  var att = 101
+  var Att = 102
+  //alert(att)
+  //
+  // 2.常见的数据类型
+  // let vs var:有更精确的作用域
+  let height = 183
+  let score = 98
+  let pi = 3.14159267
+  let v = -0.6
+  let f1 = 3.14e3 //3140
+  console.log(score+f1+v)
+  //3237.4
+
+  // document.body.innerText = height+score+pi+v+f1 +"\n"
+  // document.body.innerText += height+score+pi+v+f1
+
+  let tyf = true;
+  let hf = false;
+  console.log(hf);
+
+  let username = "张三"
+  console.log(username);
+
+  let fun1 =function (){
+    alert(att+f1-height)
+  }
+  fun1()
+  //3058
+
+  let list = ['张三','李四','王五','赵六']
+  /*let fun2 =function (){
+    alert(list[2])
+  }
+  fun2()*/
+  console.log(list[1])
+
+  let person = {
+    id:'示例学号',
+    name:'示例姓名',
+    age:18,
+    weight:140,
+    tel:'示例电话'
+  }
+  let fun3 =function (){
+    alert(person.weight)
+  }
+  fun3()
+
+  console.log(person.weight)
+</script>
+</body>
+</html>
