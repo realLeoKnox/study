@@ -1,0 +1,6 @@
+flowchart TB
+  A["LSW1"] ---|"双方 E0/0/3 · Trunk"| B["LSW2"]
+  A ---|"E0/0/1 · Access VLAN 50"| P1["PC1"]
+  A ---|"E0/0/2 · Access VLAN 60"| P2["PC2"]
+  B ---|"E0/0/1 · Access VLAN 50"| P3["PC3"]
+  B ---|"E0/0/2 · Access VLAN 60"| P4["PC4"]

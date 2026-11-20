@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="198" viewBox="0 0 720 198" role="img">
+<defs><marker id="dot1q-frame-a" viewBox="0 0 8 8" markerWidth="7" markerHeight="7" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#176779"/></marker></defs><rect width="720" height="198" fill="#fff"/>
+<text x="75" y="24" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="16" fill="#20323b" font-weight="700">Ethernet II</text>
+<rect x="20" y="35" width="110" height="38" rx="4" fill="#f6f9fa" stroke="#9ebac2"/>
+<text x="75.0" y="60.0" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="15" fill="#20323b" font-weight="700">目的 MAC</text>
+<rect x="130" y="35" width="110" height="38" rx="4" fill="#f6f9fa" stroke="#9ebac2"/>
+<text x="185.0" y="60.0" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="15" fill="#20323b" font-weight="700">源 MAC</text>
+<rect x="240" y="35" width="108" height="38" rx="4" fill="#f6f9fa" stroke="#9ebac2"/>
+<text x="294.0" y="60.0" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="15" fill="#20323b" font-weight="700">EtherType</text>
+<rect x="348" y="35" width="260" height="38" rx="4" fill="#f6f9fa" stroke="#9ebac2"/>
+<text x="478.0" y="60.0" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="15" fill="#20323b" font-weight="700">Payload</text>
+<rect x="608" y="35" width="92" height="38" rx="4" fill="#f6f9fa" stroke="#9ebac2"/>
+<text x="654.0" y="60.0" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="15" fill="#20323b" font-weight="700">FCS</text>
+<text x="360" y="97" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="17" fill="#176779" font-weight="700">源 MAC 后插入 4 B 标签，原 EtherType 顺延</text>
+<rect x="20" y="111" width="110" height="38" rx="4" fill="#f6f9fa" stroke="#9ebac2"/>
+<text x="75.0" y="136.0" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="15" fill="#20323b" font-weight="700">目的 MAC</text>
+<rect x="130" y="111" width="110" height="38" rx="4" fill="#f6f9fa" stroke="#9ebac2"/>
+<text x="185.0" y="136.0" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="15" fill="#20323b" font-weight="700">源 MAC</text>
+<rect x="240" y="111" width="95" height="38" rx="4" fill="#edf4f5" stroke="#9ebac2"/>
+<text x="287.5" y="136.0" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="15" fill="#20323b" font-weight="700">TPID</text>
+<rect x="335" y="111" width="85" height="38" rx="4" fill="#edf4f5" stroke="#9ebac2"/>
+<text x="377.5" y="136.0" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="15" fill="#20323b" font-weight="700">TCI</text>
+<rect x="420" y="111" width="105" height="38" rx="4" fill="#f6f9fa" stroke="#9ebac2"/>
+<text x="472.5" y="136.0" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="15" fill="#20323b" font-weight="700">EtherType</text>
+<rect x="525" y="111" width="110" height="38" rx="4" fill="#f6f9fa" stroke="#9ebac2"/>
+<text x="580.0" y="136.0" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="15" fill="#20323b" font-weight="700">Payload</text>
+<rect x="635" y="111" width="65" height="38" rx="4" fill="#f6f9fa" stroke="#9ebac2"/>
+<text x="667.5" y="136.0" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="15" fill="#20323b" font-weight="700">FCS</text>
+<text x="287" y="175" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="14" fill="#20323b" font-weight="400">16 bit · 0x8100</text>
+<text x="518" y="175" text-anchor="middle" font-family="Hiragino Sans GB, Noto Sans CJK SC, sans-serif" font-size="14" fill="#20323b" font-weight="400">TCI = PCP 3 bit + DEI 1 bit + VID 12 bit</text>
+</svg>

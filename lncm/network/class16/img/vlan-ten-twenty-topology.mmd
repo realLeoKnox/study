@@ -1,0 +1,12 @@
+flowchart TB
+  S1["LSW1"]
+  S2["LSW2"]
+  S3["LSW3"]
+  S1 ---|"E0/0/1 ↔ E0/0/4 · Trunk"| S2
+  S1 ---|"E0/0/2 ↔ E0/0/4 · Trunk"| S3
+  S2 ---|"E0/0/1 · VLAN 10"| P1["PC1"]
+  S2 ---|"E0/0/2 · VLAN 10"| P2["PC2"]
+  S2 ---|"E0/0/3 · VLAN 20"| P3["PC3"]
+  S3 ---|"E0/0/1 · VLAN 10"| P4["PC4"]
+  S3 ---|"E0/0/2 · VLAN 20"| P5["PC5"]
+  S3 ---|"E0/0/3 · VLAN 20"| P6["PC6"]

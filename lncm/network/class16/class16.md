@@ -6,6 +6,7 @@
 > **导读**  
 > 一台交换机内部用 VLAN 分隔广播域；多台交换机之间用 Trunk 传递多个 VLAN 的帧。本课先完成“三交换机、六主机”的 VLAN 10/20 组网，再根据实验文档搭建“两交换机、四主机”的 VLAN 50/60 拓扑，重点理解端口的 PVID、802.1Q 标签与 Trunk 允许列表。**以下严格区分课堂任务、已见配置输出与尚未看到的验证结果。**
 
+<!-- PAGE: VLAN 实践课 -->
 ## 一、实验目的与 VLAN 基础
 
 老师明确给出的实验目的：
@@ -24,10 +25,9 @@
 
 在 Ethernet II 帧的**源 MAC 之后、原 EtherType 之前**插入 4 B：
 
-```text
-普通帧：  [目的 MAC 6B][源 MAC 6B][EtherType 2B][Payload][FCS]
-标记帧：[目的 MAC 6B][源 MAC 6B][TPID 2B][TCI 2B][EtherType 2B][Payload][FCS]
-```
+![802.1Q 标签位置与字段](img/dot1q-frame.svg)
+
+*图 16-1　单标签 Ethernet II 帧结构，Tag 共 4 B。图内字段宽度仅示意。*
 
 | 字段 | 位数 | 含义 |
 |---|---:|---|
@@ -38,6 +38,7 @@
 
 `2^12 = 4096` 种编码（0–4095）；通常可用 VID 为 **1–4094**，0 表示仅携带优先级信息、4095 保留。单标签标准 Ethernet 最大帧由 **1518 B 增至 1522 B**（不含前导码及 SFD）。**VLAN ID 的值不会改变这 4 B 长度。**
 
+<!-- PAGE: Access、Trunk 与标签 -->
 ### 2. Access、Trunk 与标签的生命周期
 
 | 项目 | Access 接入链路 | Trunk 干道链路 |
@@ -55,29 +56,23 @@
 4. 另一交换机按 VID 10 转发；
 5. 到 PC4 的 Access 出口发出无标签帧。
 
+![VLAN 标签的传递路径](img/tag-lifecycle.svg)
+
+*图 16-2　VLAN 10 的标签传递示意，图中跨交换机路径经过已放行该 VLAN 的 Trunk。*
+
 交换机内部必须保留帧的 VLAN 归属信息，但**不必理解为内部每个环节都实际插入了 802.1Q 字节**。一条 Trunk 能承载多个 VLAN，是因为每个帧独立标识其 VLAN，而非每 VLAN 单独拉线；带宽仍由所有 VLAN 共享。
 
 > **易错点**  
 > **PVID 与 Trunk 允许列表不是同一回事**。`display port vlan` 中 `PVID 1 | Trunk VLAN List 10 20` 是正常配置：未标记帧的默认归属为 VLAN 1，但 VLAN 1 不一定被允许在此接口转发。另，用户说的“BID”在这里应为 **VID**；BID 是生成树语境中常见的 Bridge ID。
 
+<!-- PAGE: 实验一 · 拓扑与命令 -->
 ## 二、实验一：三交换机、六主机（VLAN 10 / 20）
 
 老师拓扑：LSW1 在上方汇聚，LSW2/LSW3 在下方，各接三台 PC；VLAN 10 为 PC1、PC2、PC4，VLAN 20 为 PC3、PC5、PC6。
 
-```mermaid
-flowchart TB
-  S1["LSW1"]
-  S2["LSW2"]
-  S3["LSW3"]
-  S1 ---|"E0/0/1 ↔ E0/0/4 · Trunk"| S2
-  S1 ---|"E0/0/2 ↔ E0/0/4 · Trunk"| S3
-  S2 ---|"E0/0/1 · VLAN 10"| P1["PC1"]
-  S2 ---|"E0/0/2 · VLAN 10"| P2["PC2"]
-  S2 ---|"E0/0/3 · VLAN 20"| P3["PC3"]
-  S3 ---|"E0/0/1 · VLAN 10"| P4["PC4"]
-  S3 ---|"E0/0/2 · VLAN 20"| P5["PC5"]
-  S3 ---|"E0/0/3 · VLAN 20"| P6["PC6"]
-```
+![三交换机 VLAN 10/20 端口映射](img/vlan-ten-twenty-topology.svg)
+
+*图 16-3　三交换机 VLAN 10/20 端口映射。链路旁标明两端端口；主机名限于本组实验。*
 
 ### 1. 关键命令
 
@@ -98,6 +93,7 @@ flowchart TB
 
 课堂还讨论了 **Port Group** 批量配置相同 VLAN 的连续 Access 接口，以代替逐端口输入。不同 eNSP/VRP 版本对临时端口组和命名端口组写法可能有差异，须以设备实际接受的命令为准。
 
+<!-- PAGE: 实验一 · 配置核对 -->
 ### 2. 本次已看到的配置验证
 
 **LSW1：** `display port vlan` 截图确认 E0/0/1、E0/0/2 为 Trunk，PVID 1，允许 VLAN 1、10、20；`display vlan` 确认 VLAN 10、20 已创建、两个接口为 tagged 成员。
@@ -124,18 +120,14 @@ port trunk allow-pass vlan 10 20
 
 **本阶段结论：** 交换机端口类型及 VLAN 成员关系在截图中得以核对；**PC 实际 Ping 结果未提供**，不写为已连通。
 
+<!-- PAGE: 实验二 · 拓扑与两轮任务 -->
 ## 三、实验二：两交换机、四主机（VLAN 50 / 60）
 
 老师后来展示了一项**新任务**，不能与上一组 VLAN 10/20 拓扑合并。
 
-```mermaid
-flowchart TB
-  A["LSW1"] ---|"双方 E0/0/3 · Trunk"| B["LSW2"]
-  A ---|"E0/0/1 · Access VLAN 50"| P1["PC1"]
-  A ---|"E0/0/2 · Access VLAN 60"| P2["PC2"]
-  B ---|"E0/0/1 · Access VLAN 50"| P3["PC3"]
-  B ---|"E0/0/2 · Access VLAN 60"| P4["PC4"]
-```
+![两交换机 VLAN 50/60 端口映射](img/vlan-fifty-sixty-topology.svg)
+
+*图 16-4　两交换机 VLAN 50/60 端口映射。链路旁标明两端端口；主机名限于本组实验。*
 
 **分组由实验文档明确给出：**
 
@@ -160,6 +152,11 @@ flowchart TB
 
 > **证据边界**  
 > 上述“通/不通”都是实验要求与理论预期。当前对话没有提供第一轮 Ping 截图、第二轮 Ping 截图或 Wireshark 对应 Tag 的抓包截图，因此**实际测试结果未确认**。
+
+<!-- PAGE: 实验二 · 配置步骤 -->
+![两轮 Trunk 放行对照](img/trunk-allow-comparison.svg)
+
+*图 16-5　两轮允许列表与理论转发预期，实际测试结果按正文记录。*
 
 ### 2. 第一轮建议/实验所需命令
 
@@ -199,6 +196,7 @@ interface Ethernet 0/0/3
  quit
 ```
 
+<!-- PAGE: 实验二 · 输出与抓包要求 -->
 ### 3. 第二组实际截图核对
 
 2026-11-19 09:43 前后的课堂截图中，两台交换机均已经显示：
@@ -220,6 +218,11 @@ interface Ethernet 0/0/3
 - 若同一 VLAN 主机先通过 ARP 获取 MAC，再发送 ICMP Echo，请区分 ARP 广播、ARP 单播应答与 ICMP。
 - 某 VLAN 在 Trunk 上不被允许时，其跨交换机帧无法被正常传递；不能把“同属 VLAN”直接理解为“必然可达”。
 
+![Trunk 抓包字段定位示意](img/capture-fields.svg)
+
+*图 16-6　抓包时的字段核对清单。此图按实验要求绘制，实际抓包结果待补。*
+
+<!-- PAGE: 辨析、完成状态与小结 -->
 ## 四、课堂中发现的容易混淆处
 
 1. **两个拓扑不同：** 第一组是 3 Switch + 6 PC + VLAN 10/20；第二组是 2 Switch + 4 PC + VLAN 50/60。第二组不是把第一组端口号直接复用。
