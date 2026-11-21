@@ -297,6 +297,72 @@
   .con_cen_cen li span{
     float: right;
   }
+
+  /* ===== 中间三栏（按效果图补全，只用课堂已用过的属性） ===== */
+  .con_hd{
+    margin: 0;
+    padding-top: 18px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #6C4A2A;
+    line-height: 30px;
+  }
+  .con_hd span{
+    margin-left: 6px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #999999;
+    letter-spacing: 1px;
+  }
+  .con_cen_lf img.about_img{
+    width: 132px;
+    height: 75px;
+    float: left;
+    margin-right: 12px;
+    margin-bottom: 4px;
+  }
+  .con_cen_lf p{
+    margin: 0;
+    font-size: 12px;
+    line-height: 24px;
+    color: #333333;
+  }
+  .con_cen_lf .more{
+    text-align: right;
+    padding-top: 6px;
+  }
+  .con_cen_lf .more a{
+    font-size: 12px;
+    color: #6C4A2A;
+    text-decoration: none;
+  }
+  .con_cen_cen li{
+    width: 384px;
+    box-sizing: border-box;
+    font-size: 12px;
+    color: #333333;
+  }
+  .con_cen_cen li a{
+    color: #333333;
+    text-decoration: none;
+  }
+  .con_cen_cen li span{
+    color: #999999;
+  }
+  .con_cen_rt img{
+    display: block;
+    width: 203px;
+    height: 67px;
+  }
+  .con_cen_rt .box_gap{
+    height: 12px;
+  }
+  .con_cen_rt .btn{
+    width: 101px;
+    height: 40px;
+    float: left;
+    padding-top: 8px;
+  }
 </style>
 <div class="content">
   <div class="con_cen">
@@ -307,19 +373,28 @@
 
   <div class="center">
     <div class="con_cen_lf">
-      <img src="sucai/images/about.jpg" alt="">
-      杭州蓝天家具有限公司，旨在打造.......
+      <div class="con_hd">蓝天家具<span>ABOUT</span></div>
+      <img class="about_img" src="sucai/images/about.jpg" alt="">
+      <p>杭州蓝天家具有限公司成立于1988年，是一家集家具设计、制造、销售一体的大型实木家具制造企业。</p>
+      <p>自创办之日起以“精、诚、实、稳的实干精神”为品牌发展之本，不断创新，旨在打造中国顶级实木家具。</p>
+      <div class="more"><a href="">品牌介绍 &gt;&gt;</a></div>
     </div>
     <div class="con_cen_cen">
-      <li><a href="">端午</a><span class="fr">2015</span></li>
-      <li><a href="">端午</a><span class="fr">2015</span></li>
-      <li><a href="">端午</a><span class="fr">2015</span></li>
-      <li><a href="">端午</a><span class="fr">2015</span></li>
-      <li><a href="">端午</a><span class="fr">2015</span></li>
-
-
+      <div class="con_hd">新闻资讯<span>NEWS</span></div>
+      <li><a href="">端午盛宴 钜惠来袭 悦动蓝天，粽是情 高端</a><span>2015-06-19</span></li>
+      <li><a href="">蓝天家具“群英汇”招聘季，火热进行中</a><span>2015-03-13</span></li>
+      <li><a href="">蓝天家具：“全诚盛惠”3.15，六重豪礼送不断</a><span>2015-03-13</span></li>
+      <li><a href="">蓝天家具年终盛典</a><span>2014-12-30</span></li>
+      <li><a href="">蓝天家具-感恩献礼 总裁特批直降10%</a><span>2014-11-14</span></li>
     </div>
-    <div class="con_cen_rt">ccc</div>
+    <div class="con_cen_rt">
+      <img src="sucai/images/zs.jpg" alt="招商热线">
+      <div class="box_gap"></div>
+      <img src="sucai/images/md.jpg" alt="门店展示">
+      <div class="box_gap"></div>
+      <img class="btn" src="sucai/images/xb1.jpg" alt="圣华微博">
+      <img class="btn" src="sucai/images/wb2.jpg" alt="官方微信">
+    </div>
   </div>
 </div>
 
