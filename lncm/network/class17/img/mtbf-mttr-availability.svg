@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="252" viewBox="0 0 720 252" role="img">
+  <defs>
+    <marker id="mt-arr" viewBox="0 0 8 8" markerWidth="7" markerHeight="7" refX="7" refY="4" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#176779"/>
+    </marker>
+    <marker id="mt-arr-l" viewBox="0 0 8 8" markerWidth="7" markerHeight="7" refX="1" refY="4" orient="auto">
+      <path d="M8 0L0 4L8 8Z" fill="#176779"/>
+    </marker>
+  </defs>
+  <rect width="720" height="252" fill="#ffffff"/>
+
+  <!-- Row 1: Non-repairable system -->
+  <text x="16" y="28" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#20323b">不可修复系统（如一次性元件）</text>
+  <rect x="24" y="42" width="470" height="32" rx="4" fill="#edf4f5" stroke="#94b2ba" stroke-width="1.3"/>
+  <text x="259" y="63" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#176779">正常工作：MTTF（平均无故障时间 / 报废寿命）</text>
+  <rect x="498" y="42" width="198" height="32" rx="4" fill="#f7ece9" stroke="#b44032" stroke-width="1.3" stroke-dasharray="5 3"/>
+  <text x="597" y="63" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#8f2d21">失效报废（不可修复）</text>
+
+  <!-- Divider -->
+  <line x1="16" y1="90" x2="704" y2="90" stroke="#d5e1e4" stroke-width="1"/>
+
+  <!-- Row 2: Repairable system -->
+  <text x="16" y="114" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#20323b">可修复系统（交换机 / 服务器 / 链路）</text>
+
+  <!-- Timeline segments -->
+  <rect x="24" y="130" width="236" height="34" rx="4" fill="#edf4f5" stroke="#176779" stroke-width="1.5"/>
+  <text x="142" y="152" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#176779">正常工作（MTBF）</text>
+
+  <rect x="264" y="130" width="106" height="34" rx="4" fill="#f7ece9" stroke="#b44032" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="317" y="152" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="700" fill="#8f2d21">修复（MTTR）</text>
+
+  <rect x="374" y="130" width="236" height="34" rx="4" fill="#edf4f5" stroke="#176779" stroke-width="1.5"/>
+  <text x="492" y="152" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#176779">恢复正常工作（MTBF）</text>
+
+  <rect x="614" y="130" width="82" height="34" rx="4" fill="#f7ece9" stroke="#b44032" stroke-width="1.3" stroke-dasharray="5 3"/>
+  <text x="655" y="152" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="700" fill="#8f2d21">再故障…</text>
+
+  <!-- Event markers -->
+  <text x="262" y="182" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12" fill="#8f2d21">▲ 故障发生</text>
+  <text x="372" y="182" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12" fill="#176779">▲ 修复上线</text>
+  <text x="612" y="182" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12" fill="#8f2d21">▲ 下次故障</text>
+
+  <!-- Formula box -->
+  <rect x="24" y="198" width="672" height="44" rx="5" fill="#f4f8f9" stroke="#94b2ba" stroke-width="1.3"/>
+  <text x="360" y="218" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="700" fill="#20323b">课件可用度公式：A = MTBF / (MTBF + MTTR)</text>
+  <text x="360" y="236" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" fill="#51626c">提升 A 两条路径：拉长 MTBF（设备更耐用） + 压低 MTTR（热备与秒级自动恢复）</text>
+</svg>

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="304" viewBox="0 0 720 304" role="img">
+  <defs>
+    <marker id="tf-a" viewBox="0 0 8 8" markerWidth="7" markerHeight="7" refX="7" refY="4" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#176779"/>
+    </marker>
+    <marker id="tf-r" viewBox="0 0 8 8" markerWidth="7" markerHeight="7" refX="7" refY="4" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#b44032"/>
+    </marker>
+  </defs>
+  <rect width="720" height="304" fill="#ffffff"/>
+
+  <!-- Top row: Steps 1 -> 2 -> 3 -> 4 -->
+  <rect x="20" y="28" width="136" height="44" rx="5" fill="#edf4f5" stroke="#94b2ba" stroke-width="1.4"/>
+  <text x="88" y="55" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#20323b">① 现象观察</text>
+
+  <path d="M156 50 L188 50" fill="none" stroke="#176779" stroke-width="1.8" marker-end="url(#tf-a)"/>
+
+  <rect x="192" y="28" width="144" height="44" rx="5" fill="#edf4f5" stroke="#176779" stroke-width="1.5"/>
+  <text x="264" y="55" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#20323b">② 收集故障信息</text>
+
+  <path d="M336 50 L368 50" fill="none" stroke="#176779" stroke-width="1.8" marker-end="url(#tf-a)"/>
+
+  <rect x="372" y="28" width="154" height="44" rx="5" fill="#edf4f5" stroke="#94b2ba" stroke-width="1.4"/>
+  <text x="449" y="55" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13.5" font-weight="700" fill="#20323b">③ 理论分析与经验判断</text>
+
+  <path d="M526 50 L554 50" fill="none" stroke="#176779" stroke-width="1.8" marker-end="url(#tf-a)"/>
+
+  <rect x="558" y="28" width="144" height="44" rx="5" fill="#edf4f5" stroke="#94b2ba" stroke-width="1.4"/>
+  <text x="630" y="55" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13.5" font-weight="700" fill="#20323b">④ 形成故障原因列表</text>
+
+  <!-- Step 4 down to Step 5 -->
+  <path d="M630 72 L630 118" fill="none" stroke="#176779" stroke-width="1.8" marker-end="url(#tf-a)"/>
+
+  <!-- Middle row right: Step 5 -->
+  <rect x="546" y="122" width="160" height="48" rx="5" fill="#edf4f5" stroke="#176779" stroke-width="1.6"/>
+  <text x="626" y="143" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13.5" font-weight="700" fill="#20323b">⑤ 诊断故障并实施排错</text>
+  <text x="626" y="161" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" fill="#51626c">（一次只改一个变量）</text>
+
+  <!-- Step 5 left to Decision Diamond -->
+  <path d="M546 146 L466 146" fill="none" stroke="#176779" stroke-width="1.8" marker-end="url(#tf-a)"/>
+
+  <!-- Decision Diamond: 是否排除 -->
+  <polygon points="396,114 462,146 396,178 330,146" fill="#ffffff" stroke="#176779" stroke-width="1.8"/>
+  <text x="396" y="151" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#20323b">是否排除？</text>
+
+  <!-- Yes branch down -->
+  <path d="M396 178 L396 226" fill="none" stroke="#176779" stroke-width="1.8" marker-end="url(#tf-a)"/>
+  <rect x="372" y="191" width="48" height="20" rx="3" fill="#ffffff"/>
+  <text x="396" y="206" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" font-weight="700" fill="#176779">Y（是）</text>
+
+  <rect x="308" y="230" width="176" height="44" rx="22" fill="#e6f2ef" stroke="#176779" stroke-width="1.6"/>
+  <text x="396" y="257" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#176779">验证恢复 · 记录归档</text>
+
+  <!-- No branch left to Rollback box -->
+  <path d="M330 146 L236 146" fill="none" stroke="#b44032" stroke-width="1.9" stroke-dasharray="5 3" marker-end="url(#tf-r)"/>
+  <rect x="258" y="125" width="48" height="18" rx="3" fill="#ffffff"/>
+  <text x="282" y="139" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" font-weight="700" fill="#8f2d21">N（否）</text>
+
+  <!-- Key highlight box: 恢复至故障状态 -->
+  <rect x="32" y="120" width="200" height="52" rx="6" fill="#fdf2f0" stroke="#b44032" stroke-width="1.8" stroke-dasharray="6 3"/>
+  <text x="132" y="143" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14.5" font-weight="700" fill="#8f2d21">恢复至故障状态（回滚）</text>
+  <text x="132" y="162" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" fill="#8f2d21">撤销无效修改，避免叠加新故障</text>
+
+  <!-- Loop 1: Rollback -> 重新收集故障信息 (Step 2) -->
+  <path d="M132 120 L132 96 L264 96 L264 76" fill="none" stroke="#b44032" stroke-width="1.6" marker-end="url(#tf-r)"/>
+  <rect x="148" y="84" width="106" height="20" rx="3" fill="#ffffff"/>
+  <text x="201" y="99" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12" font-weight="700" fill="#8f2d21">重新收集故障信息</text>
+
+  <!-- Loop 2: Rollback -> 实施下一个排错方案 (Step 5) -->
+  <path d="M132 172 L132 252 L288 252 M504 252 L626 252 L626 174" fill="none" stroke="none"/>
+  <path d="M132 172 L132 288 L626 288 L626 174" fill="none" stroke="#176779" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#tf-a)"/>
+  <rect x="502" y="276" width="136" height="20" rx="3" fill="#ffffff"/>
+  <text x="570" y="291" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12" font-weight="700" fill="#176779">实施下一个排错方案</text>
+</svg>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="258" viewBox="0 0 720 258" role="img">
+  <defs>
+    <marker id="pg-a" viewBox="0 0 8 8" markerWidth="7" markerHeight="7" refX="7" refY="4" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#176779"/>
+    </marker>
+    <marker id="pg-g" viewBox="0 0 8 8" markerWidth="7" markerHeight="7" refX="7" refY="4" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#51626c"/>
+    </marker>
+  </defs>
+  <rect width="720" height="258" fill="#ffffff"/>
+
+  <!-- Column headers -->
+  <rect x="20" y="10" width="132" height="32" rx="4" fill="#edf4f5" stroke="#94b2ba"/>
+  <text x="86" y="31" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#20323b">探测方式</text>
+
+  <rect x="168" y="10" width="110" height="32" rx="4" fill="#edf4f5" stroke="#94b2ba"/>
+  <text x="223" y="31" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#20323b">源主机</text>
+
+  <rect x="478" y="10" width="110" height="32" rx="4" fill="#edf4f5" stroke="#94b2ba"/>
+  <text x="533" y="31" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#20323b">目标主机</text>
+
+  <rect x="602" y="10" width="98" height="32" rx="4" fill="#edf4f5" stroke="#94b2ba"/>
+  <text x="651" y="31" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#20323b">适用场景</text>
+
+  <!-- Vertical lifelines -->
+  <line x1="223" y1="42" x2="223" y2="246" stroke="#b6c8cd" stroke-dasharray="4 4"/>
+  <line x1="533" y1="42" x2="533" y2="246" stroke="#b6c8cd" stroke-dasharray="4 4"/>
+
+  <!-- Row 1: ICMP Ping -->
+  <rect x="20" y="54" width="132" height="54" rx="5" fill="#f4f8f9" stroke="#176779" stroke-width="1.4"/>
+  <text x="86" y="77" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#176779">ICMP Ping</text>
+  <text x="86" y="96" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12" fill="#51626c">网络层 · 标准 ping</text>
+
+  <path d="M225 69 L529 69" fill="none" stroke="#176779" stroke-width="1.8" marker-end="url(#pg-a)"/>
+  <text x="377" y="62" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" font-weight="700" fill="#176779">ICMP Echo Request（Type 8）</text>
+  <path d="M531 94 L227 94" fill="none" stroke="#176779" stroke-width="1.8" marker-end="url(#pg-a)"/>
+  <text x="377" y="88" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" fill="#20323b">ICMP Echo Reply（Type 0）→ 算 RTT / 丢包</text>
+
+  <text x="651" y="76" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12" fill="#20323b">三层可达性</text>
+  <text x="651" y="95" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" fill="#64727c">禁 ICMP 时失效</text>
+
+  <line x1="20" y1="117" x2="700" y2="117" stroke="#dde6e8"/>
+
+  <!-- Row 2: TCP Ping -->
+  <rect x="20" y="126" width="132" height="54" rx="5" fill="#f4f8f9" stroke="#94b2ba" stroke-width="1.4"/>
+  <text x="86" y="149" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#20323b">TCP Ping</text>
+  <text x="86" y="168" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12" fill="#51626c">传输层 · tcping / nc</text>
+
+  <path d="M225 141 L529 141" fill="none" stroke="#176779" stroke-width="1.8" marker-end="url(#pg-a)"/>
+  <text x="377" y="134" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" font-weight="700" fill="#176779">TCP SYN → 指定业务端口（如 443）</text>
+  <path d="M531 166 L227 166" fill="none" stroke="#176779" stroke-width="1.8" marker-end="url(#pg-a)"/>
+  <text x="377" y="160" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" fill="#20323b">SYN-ACK（端口开）或 RST（主机活但端口关）</text>
+
+  <text x="651" y="148" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12" fill="#20323b">绕过禁 Ping</text>
+  <text x="651" y="167" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" fill="#64727c">验证服务端口</text>
+
+  <line x1="20" y1="189" x2="700" y2="189" stroke="#dde6e8"/>
+
+  <!-- Row 3: UDP Ping -->
+  <rect x="20" y="198" width="132" height="50" rx="5" fill="#f4f8f9" stroke="#94b2ba" stroke-width="1.4"/>
+  <text x="86" y="219" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14" font-weight="700" fill="#20323b">UDP Ping</text>
+  <text x="86" y="237" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12" fill="#51626c">传输层 · nping</text>
+
+  <path d="M225 212 L529 212" fill="none" stroke="#51626c" stroke-width="1.7" marker-end="url(#pg-g)"/>
+  <text x="377" y="205" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" font-weight="700" fill="#20323b">UDP 探测包 → 目标 UDP 端口（如 53）</text>
+  <path d="M531 236 L227 236" fill="none" stroke="#51626c" stroke-width="1.7" stroke-dasharray="5 3" marker-end="url(#pg-g)"/>
+  <text x="377" y="229" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" fill="#51626c">端口关 → ICMP 端口不可达；开或被拦 → 常无回包</text>
+
+  <text x="651" y="219" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12" fill="#20323b">UDP 服务探测</text>
+  <text x="651" y="237" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" fill="#64727c">确定性弱于 TCP</text>
+</svg>

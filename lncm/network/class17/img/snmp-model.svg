@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="276" viewBox="0 0 720 276" role="img">
+  <defs>
+    <marker id="snmp-a" viewBox="0 0 8 8" markerWidth="7" markerHeight="7" refX="7" refY="4" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#176779"/>
+    </marker>
+    <marker id="snmp-alert" viewBox="0 0 8 8" markerWidth="7" markerHeight="7" refX="7" refY="4" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#b44032"/>
+    </marker>
+  </defs>
+  <rect width="720" height="276" fill="#ffffff"/>
+
+  <!-- Left box: NMS -->
+  <rect x="24" y="42" width="184" height="122" rx="6" fill="#edf4f5" stroke="#176779" stroke-width="1.6"/>
+  <text x="116" y="88" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="700" fill="#20323b">管理站（NMS）</text>
+  <text x="116" y="114" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" fill="#51626c">网管中心 / 监控平台</text>
+  <text x="116" y="138" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" fill="#176779">监听 Trap：UDP 162</text>
+
+  <!-- Right top box: Agent -->
+  <rect x="492" y="24" width="204" height="92" rx="6" fill="#edf4f5" stroke="#176779" stroke-width="1.6"/>
+  <text x="594" y="58" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="700" fill="#20323b">代理 Agent（被管设备）</text>
+  <text x="594" y="82" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" fill="#51626c">路由器 / 交换机 / 服务器</text>
+  <text x="594" y="102" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" fill="#176779">接收查询/修改：UDP 161</text>
+
+  <!-- Right bottom box: MIB -->
+  <rect x="506" y="170" width="176" height="62" rx="6" fill="#f7f5ee" stroke="#9b8348" stroke-width="1.5"/>
+  <text x="594" y="196" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="700" fill="#20323b">MIB（管理信息库）</text>
+  <text x="594" y="218" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" fill="#51626c">保存控制与状态台账（OID）</text>
+
+  <!-- Step 1: NMS -> Agent (Get/Set) -->
+  <path d="M208 62 L488 62" fill="none" stroke="#176779" stroke-width="1.9" marker-end="url(#snmp-a)"/>
+  <text x="348" y="48" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13.5" font-weight="700" fill="#176779">① Get / Set 请求（UDP 161）</text>
+  <text x="348" y="79" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12" fill="#51626c">主动轮询读取状态或下发参数修改</text>
+
+  <!-- Step 2: Agent <-> MIB -->
+  <path d="M582 116 L582 166" fill="none" stroke="#176779" stroke-width="1.6" marker-end="url(#snmp-a)"/>
+  <path d="M610 170 L610 120" fill="none" stroke="#176779" stroke-width="1.6" marker-end="url(#snmp-a)"/>
+  <rect x="476" y="131" width="102" height="22" rx="3" fill="#ffffff"/>
+  <text x="527" y="147" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" font-weight="700" fill="#20323b">② 读写本地 MIB</text>
+
+  <!-- Step 3: Agent -> NMS (Response) -->
+  <path d="M492 104 L212 104" fill="none" stroke="#176779" stroke-width="1.9" marker-end="url(#snmp-a)"/>
+  <text x="336" y="122" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="700" fill="#20323b">③ Get / Set 响应（返回结果）</text>
+
+  <!-- Step 4: Agent -> NMS (Trap) -->
+  <path d="M492 108 L466 108 L466 198 L116 198 L116 168" fill="none" stroke="#b44032" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#snmp-alert)"/>
+  <rect x="160" y="182" width="286" height="32" rx="4" fill="#fdf2f0" stroke="#b44032" stroke-width="1.2"/>
+  <text x="303" y="203" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13.5" font-weight="700" fill="#8f2d21">④ Trap 告警（UDP 162）：异常主动上报</text>
+
+  <!-- Footer caption bar -->
+  <text x="360" y="260" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" fill="#64727c">底层按 ASN.1 定义、BER 编码传输；生产环境推荐使用支持身份验证与加密的 SNMPv3</text>
+</svg>
