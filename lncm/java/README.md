@@ -21,6 +21,7 @@
 | 15 | [继承、成员访问与方法重写](class15/class15.md) | [PDF](class15/Java入门笔记-第十五课.pdf) |
 | 16 | [向上转型、向下转型、instanceof 与 final](class16/class16.md) | [PDF](class16/Java入门笔记-第十六课.pdf) |
 | 17 | [运行时多态与抽象类](class17/class17.md) | [PDF](class17/Java入门笔记-第十七课.pdf) |
+| 18 | [泛型与通配符](class18/class18.md) | [PDF](class18/Java入门笔记-第十八课.pdf) |
 
 ## 说明
 
