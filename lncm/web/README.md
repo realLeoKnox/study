@@ -21,6 +21,7 @@
 | 15 | [CSS 背景，以及 header + banner + footer 合并页](class15/class15.md) | [手抄](class15/class15-手抄版.md) | [PDF](class15/Web前端笔记-第十五课.pdf) |
 | 16 | [JavaScript 入门与引入方式](class16/class16.md) | [手抄](class16/class16-手抄版.md) | [PDF](class16/Web前端笔记-第十六课.pdf) |
 | 17 | [JavaScript 变量、类型、函数与对象](class17/class17.md) | [手抄](class17/class17-手抄版.md) | [PDF](class17/Web前端笔记-第十七课.pdf) |
+| 18 | [JavaScript 数据转换、作用域与运算符](class18/class18.md) | [手抄](class18/class18-手抄版.md) | [PDF](class18/Web前端笔记-第十八课.pdf) |
 
 ## 说明
 
