@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="226" viewBox="0 0 720 226" role="img">
+  <defs>
+    <marker id="rf-a" viewBox="0 0 8 8" markerWidth="7" markerHeight="7" refX="7" refY="4" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#176779"/>
+    </marker>
+    <marker id="rf-r" viewBox="0 0 8 8" markerWidth="7" markerHeight="7" refX="7" refY="4" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#b44032"/>
+    </marker>
+  </defs>
+  <rect width="720" height="226" fill="#ffffff"/>
+
+  <!-- 5 Nodes -->
+  <rect x="16" y="16" width="90" height="36" rx="5" fill="#edf4f5" stroke="#176779" stroke-width="1.4"/>
+  <text x="61" y="39" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="700" fill="#20323b">PC1 (.1.1)</text>
+
+  <rect x="166" y="16" width="76" height="36" rx="5" fill="#edf4f5" stroke="#94b2ba" stroke-width="1.4"/>
+  <text x="204" y="39" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="700" fill="#20323b">R1</text>
+
+  <rect x="312" y="16" width="76" height="36" rx="5" fill="#edf4f5" stroke="#94b2ba" stroke-width="1.4"/>
+  <text x="350" y="39" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="700" fill="#20323b">R2</text>
+
+  <rect x="458" y="16" width="92" height="36" rx="5" fill="#fdf2f0" stroke="#b44032" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <text x="504" y="39" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" font-weight="700" fill="#8f2d21">R3（缺回程）</text>
+
+  <rect x="612" y="16" width="92" height="36" rx="5" fill="#edf4f5" stroke="#176779" stroke-width="1.4"/>
+  <text x="658" y="39" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="700" fill="#20323b">PC2 (.4.1)</text>
+
+  <!-- Lifelines -->
+  <line x1="61" y1="52" x2="61" y2="188" stroke="#b6c8cd" stroke-dasharray="4 4"/>
+  <line x1="204" y1="52" x2="204" y2="188" stroke="#b6c8cd" stroke-dasharray="4 4"/>
+  <line x1="350" y1="52" x2="350" y2="188" stroke="#b6c8cd" stroke-dasharray="4 4"/>
+  <line x1="504" y1="52" x2="504" y2="188" stroke="#d9a59e" stroke-dasharray="4 4"/>
+  <line x1="658" y1="52" x2="658" y2="188" stroke="#b6c8cd" stroke-dasharray="4 4"/>
+
+  <!-- Forward OK -->
+  <path d="M63 84 L654 84" fill="none" stroke="#176779" stroke-width="2" marker-end="url(#rf-a)"/>
+  <rect x="180" y="66" width="356" height="16" fill="#ffffff"/>
+  <text x="358" y="78" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12" font-weight="700" fill="#176779">① 去程 ICMP Echo Request（1.1 → 4.1）：一路顺畅送达 PC2</text>
+
+  <!-- Return fails at R3 -->
+  <path d="M656 126 L510 126" fill="none" stroke="#b44032" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#rf-r)"/>
+  <rect x="524" y="108" width="122" height="16" fill="#ffffff"/>
+  <text x="585" y="120" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" font-weight="700" fill="#8f2d21">② 回包 Reply（4.1→1.1）</text>
+
+  <rect x="372" y="138" width="234" height="42" rx="5" fill="#fdf2f0" stroke="#b44032" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="489" y="156" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12" font-weight="700" fill="#8f2d21">✕ R3 查表无 192.168.1.0/24 路由</text>
+  <text x="489" y="172" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11" fill="#8f2d21">回包在 R3 被直接丢弃，无法送回 PC1</text>
+
+  <!-- Timeout at PC1 -->
+  <rect x="22" y="138" width="186" height="42" rx="5" fill="#f8fafb" stroke="#64727c" stroke-width="1.3"/>
+  <text x="115" y="156" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12" font-weight="700" fill="#20323b">PC1 表现：Request timeout!</text>
+  <text x="115" y="172" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.8" fill="#51626c">本质是「发得过去、回不来」</text>
+
+  <text x="360" y="210" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" fill="#64727c">复现命令示例：在 R3 执行 undo ip route-static 192.168.1.0 24 192.168.3.1（本图为原理示意，实测待补）</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="224" viewBox="0 0 720 224" role="img">
+  <rect width="720" height="224" fill="#ffffff"/>
+
+  <!-- Left Panel: By Source -->
+  <rect x="14" y="12" width="338" height="198" rx="6" fill="#f8fafb" stroke="#176779" stroke-width="1.5"/>
+  <text x="183" y="34" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13.5" font-weight="700" fill="#176779">维度一：按信息源分类（盯哪里？）</text>
+  <line x1="26" y1="44" x2="340" y2="44" stroke="#c8d7dc"/>
+
+  <rect x="26" y="54" width="314" height="68" rx="5" fill="#edf4f5" stroke="#94b2ba" stroke-width="1.2"/>
+  <text x="38" y="74" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" font-weight="700" fill="#20323b">HIDS（基于主机，Host-based）</text>
+  <text x="38" y="93" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" fill="#20323b">• 盯本机日志、敏感文件篡改、异常进程与系统调用</text>
+  <text x="38" y="111" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11" fill="#51626c">优势：不受网络加密影响　短板：逐机部署、占主机资源</text>
+
+  <rect x="26" y="132" width="314" height="68" rx="5" fill="#edf4f5" stroke="#94b2ba" stroke-width="1.2"/>
+  <text x="38" y="152" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" font-weight="700" fill="#20323b">NIDS（基于网络，Network-based）</text>
+  <text x="38" y="171" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" fill="#20323b">• 挂接交换机镜像口，旁路嗅探整段网络数据包</text>
+  <text x="38" y="189" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11" fill="#51626c">优势：覆盖全网段、零侵入　短板：难看穿 HTTPS 载荷</text>
+
+  <!-- Right Panel: By Detection Method -->
+  <rect x="368" y="12" width="338" height="198" rx="6" fill="#f8fafb" stroke="#176779" stroke-width="1.5"/>
+  <text x="537" y="34" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13.5" font-weight="700" fill="#176779">维度二：按分析方法分类（怎么判？）</text>
+  <line x1="380" y1="44" x2="694" y2="44" stroke="#c8d7dc"/>
+
+  <rect x="380" y="54" width="314" height="68" rx="5" fill="#e6f2ef" stroke="#176779" stroke-width="1.2"/>
+  <text x="392" y="74" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" font-weight="700" fill="#176779">MD（误用检测 / 特征签名 · 黑名单思路）</text>
+  <text x="392" y="93" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" fill="#20323b">• 匹配已知攻击特征库（如已知 SQL 注入/扫描指纹）</text>
+  <text x="392" y="111" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11" fill="#51626c">优势：准确、误报低　短板：难检出未知 0-day 攻击</text>
+
+  <rect x="380" y="132" width="314" height="68" rx="5" fill="#fdf2f0" stroke="#b44032" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="392" y="152" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" font-weight="700" fill="#8f2d21">AD（异常检测 / 行为基线 · 白名单轮廓）</text>
+  <text x="392" y="171" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" fill="#20323b">• 学习日常正常基线，行为显著偏离常态即告警</text>
+  <text x="392" y="189" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11" fill="#51626c">优势：可发现新型未知攻击　短板：业务波动易致误报</text>
+</svg>

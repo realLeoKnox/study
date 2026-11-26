@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="270" viewBox="0 0 720 270" role="img">
+  <defs>
+    <marker id="ca-a" viewBox="0 0 8 8" markerWidth="7" markerHeight="7" refX="7" refY="4" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#176779"/>
+    </marker>
+    <marker id="ca-r" viewBox="0 0 8 8" markerWidth="7" markerHeight="7" refX="7" refY="4" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#b44032"/>
+    </marker>
+  </defs>
+  <rect width="720" height="270" fill="#ffffff"/>
+
+  <!-- Top Section: Issuance -->
+  <text x="16" y="22" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="700" fill="#176779">一、证书申请与签发（绑定「身份 ↔ 公钥」）</text>
+
+  <rect x="16" y="32" width="156" height="62" rx="5" fill="#edf4f5" stroke="#176779" stroke-width="1.4"/>
+  <text x="94" y="54" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" font-weight="700" fill="#20323b">① 网站/用户本地</text>
+  <text x="94" y="72" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11" fill="#20323b">生成密钥对（公钥+私钥）</text>
+  <text x="94" y="87" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.5" font-weight="700" fill="#8f2d21">私钥死守本机绝不外传</text>
+
+  <path d="M172 63 L252 63" fill="none" stroke="#176779" stroke-width="1.8" marker-end="url(#ca-a)"/>
+  <text x="212" y="54" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11" font-weight="700" fill="#176779">② 提交 CSR</text>
+  <text x="212" y="78" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.5" fill="#51626c">身份信息+公钥</text>
+
+  <rect x="256" y="32" width="196" height="62" rx="5" fill="#f7f5ee" stroke="#9b8348" stroke-width="1.5"/>
+  <text x="354" y="53" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" font-weight="700" fill="#20323b">③ 权威机构 CA 核验</text>
+  <text x="354" y="71" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11" fill="#20323b">核实域名/组织控制权</text>
+  <text x="354" y="86" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11" font-weight="700" fill="#8f2d21">用 CA 私钥对摘要做数字签名</text>
+
+  <path d="M452 63 L526 63" fill="none" stroke="#176779" stroke-width="1.8" marker-end="url(#ca-a)"/>
+  <text x="489" y="54" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11" font-weight="700" fill="#176779">④ 签发</text>
+
+  <rect x="530" y="30" width="174" height="66" rx="5" fill="#e6f2ef" stroke="#176779" stroke-width="1.5"/>
+  <text x="617" y="50" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" font-weight="700" fill="#176779">数字证书（X.509）</text>
+  <text x="617" y="67" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.8" fill="#20323b">主体域名 + 主体公钥 + 有效期</text>
+  <text x="617" y="83" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.8" font-weight="700" fill="#8f2d21">+ 颁发者 + CA 数字签名</text>
+
+  <!-- Divider -->
+  <line x1="16" y1="112" x2="704" y2="112" stroke="#c8d7dc" stroke-dasharray="5 3"/>
+
+  <!-- Bottom Section: Verification -->
+  <text x="16" y="134" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="700" fill="#176779">二、浏览器访问 HTTPS 时的四关验真流程</text>
+
+  <rect x="16" y="148" width="128" height="72" rx="5" fill="#edf4f5" stroke="#94b2ba" stroke-width="1.4"/>
+  <text x="80" y="174" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" font-weight="700" fill="#20323b">目标网站</text>
+  <text x="80" y="194" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11" fill="#51626c">TLS 握手出示</text>
+  <text x="80" y="210" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11" fill="#176779">数字证书与链</text>
+
+  <path d="M144 184 L182 184" fill="none" stroke="#176779" stroke-width="1.8" marker-end="url(#ca-a)"/>
+
+  <rect x="186" y="144" width="348" height="82" rx="6" fill="#f8fafb" stroke="#176779" stroke-width="1.5"/>
+  <text x="360" y="164" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" font-weight="700" fill="#176779">客户端 / 浏览器用内置根 CA 公钥逐项核查</text>
+  <text x="198" y="185" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" fill="#20323b">1. 验签名：CA 公钥验签 + 重算摘要比对，防篡改</text>
+  <text x="198" y="202" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" fill="#20323b">2. 核域名与有效期：证书域名匹配且未过期</text>
+  <text x="198" y="219" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" fill="#20323b">3. 查吊销：确认未被 CRL / OCSP 提前作废</text>
+
+  <path d="M534 170 L568 170" fill="none" stroke="#176779" stroke-width="1.8" marker-end="url(#ca-a)"/>
+  <rect x="572" y="148" width="132" height="36" rx="4" fill="#e6f2ef" stroke="#176779" stroke-width="1.3"/>
+  <text x="638" y="164" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" font-weight="700" fill="#176779">通过 → 信任公钥</text>
+  <text x="638" y="179" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.5" fill="#20323b">进入加密密钥协商</text>
+
+  <path d="M534 204 L568 204" fill="none" stroke="#b44032" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#ca-r)"/>
+  <rect x="572" y="190" width="132" height="36" rx="4" fill="#fdf2f0" stroke="#b44032" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="638" y="206" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" font-weight="700" fill="#8f2d21">失败 → 告警阻断</text>
+  <text x="638" y="221" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.5" fill="#8f2d21">疑似中间人/自签名</text>
+
+  <text x="360" y="254" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" fill="#64727c">关系辨析：数字签名是「防伪验真动作」，数字证书是「靠 CA 签名担保的身份-公钥绑定证件」</text>
+</svg>

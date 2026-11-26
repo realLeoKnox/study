@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="252" viewBox="0 0 720 252" role="img">
+  <rect width="720" height="252" fill="#ffffff"/>
+
+  <!-- Header Bar -->
+  <rect x="14" y="10" width="174" height="32" rx="4" fill="#edf4f5" stroke="#176779"/>
+  <text x="101" y="31" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" font-weight="700" fill="#20323b">测试与抓包场景</text>
+
+  <rect x="196" y="10" width="248" height="32" rx="4" fill="#fdf2f0" stroke="#b44032" stroke-dasharray="4 3"/>
+  <text x="320" y="31" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" font-weight="700" fill="#8f2d21">老师精简版（仅 1.0 / 4.0）</text>
+
+  <rect x="452" y="10" width="254" height="32" rx="4" fill="#e6f2ef" stroke="#176779"/>
+  <text x="579" y="31" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12.5" font-weight="700" fill="#176779">全网可达版（补 R1:3.0 / R3:2.0）</text>
+
+  <!-- Row 1 -->
+  <rect x="14" y="50" width="174" height="46" rx="4" fill="#f8fafb" stroke="#94b2ba"/>
+  <text x="101" y="69" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12" font-weight="700" fill="#20323b">PC1 ping / tracert PC2</text>
+  <text x="101" y="87" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.8" fill="#51626c">目的 192.168.4.1（含抓包）</text>
+
+  <rect x="196" y="50" width="248" height="46" rx="4" fill="#ffffff" stroke="#c8d7dc"/>
+  <text x="320" y="69" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" font-weight="700" fill="#176779">全通且 4 跳完整显示</text>
+  <text x="320" y="87" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.8" fill="#51626c">转发只查目的 IP（1.1/4.1），抓包完全相同</text>
+
+  <rect x="452" y="50" width="254" height="46" rx="4" fill="#ffffff" stroke="#c8d7dc"/>
+  <text x="579" y="69" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" font-weight="700" fill="#176779">全通且 4 跳完整显示</text>
+  <text x="579" y="87" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.8" fill="#51626c">逐跳 TTL 减 1、MAC 换装，与左栏无差异</text>
+
+  <!-- Row 2 -->
+  <rect x="14" y="104" width="174" height="52" rx="4" fill="#f8fafb" stroke="#94b2ba"/>
+  <text x="101" y="126" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12" font-weight="700" fill="#20323b">PC1 ping 192.168.3.2</text>
+  <text x="101" y="144" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.8" fill="#51626c">或 ping 3.1（逐层分段测）</text>
+
+  <rect x="196" y="104" width="248" height="52" rx="4" fill="#fdf2f0" stroke="#b44032" stroke-dasharray="4 3"/>
+  <text x="320" y="125" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" font-weight="700" fill="#8f2d21">不通（R1 当场丢包回不可达）</text>
+  <text x="320" y="144" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.8" fill="#51626c">R1–R2 与 R2–R3 链路完全抓不到该探测包</text>
+
+  <rect x="452" y="104" width="254" height="52" rx="4" fill="#e6f2ef" stroke="#176779"/>
+  <text x="579" y="125" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" font-weight="700" fill="#176779">全通（实测 3.1：5/5 ttl=254）</text>
+  <text x="579" y="144" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.8" fill="#51626c">沿途链路可抓完整 Echo Request / Reply</text>
+
+  <!-- Row 3 -->
+  <rect x="14" y="164" width="174" height="52" rx="4" fill="#f8fafb" stroke="#94b2ba"/>
+  <text x="101" y="186" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="12" font-weight="700" fill="#20323b">R1 ping / tracert 4.1</text>
+  <text x="101" y="204" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.8" fill="#51626c">默认源 IP = 出接口 .2.1</text>
+
+  <rect x="196" y="164" width="248" height="52" rx="4" fill="#fdf2f0" stroke="#b44032" stroke-dasharray="4 3"/>
+  <text x="320" y="185" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" font-weight="700" fill="#8f2d21">超时（第 2 跳 R3 起 * * *）</text>
+  <text x="320" y="204" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.8" fill="#51626c">R3 无 2.0/24 路由，PC2 回包死在 R3</text>
+
+  <rect x="452" y="164" width="254" height="52" rx="4" fill="#e6f2ef" stroke="#176779"/>
+  <text x="579" y="185" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" font-weight="700" fill="#176779">全通且每一跳正常显示</text>
+  <text x="579" y="204" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.8" fill="#51626c">R3 凭 2.0/24 路由将回包顺利送回 .2.1</text>
+
+  <text x="360" y="238" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" fill="#64727c">铁律：路由器默认只按目的 IP 查表；边缘设备改配默认路由（0.0.0.0/0）后亦天然具备全网可达效果</text>
+</svg>

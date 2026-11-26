@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="278" viewBox="0 0 720 278" role="img">
+  <defs>
+    <marker id="st-a" viewBox="0 0 8 8" markerWidth="7" markerHeight="7" refX="7" refY="4" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#176779"/>
+    </marker>
+    <marker id="st-r" viewBox="0 0 8 8" markerWidth="7" markerHeight="7" refX="7" refY="4" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#b44032"/>
+    </marker>
+  </defs>
+  <rect width="720" height="278" fill="#ffffff"/>
+
+  <!-- Top Subnet Bands -->
+  <rect x="14" y="10" width="154" height="24" rx="4" fill="#edf4f5" stroke="#94b2ba"/>
+  <text x="91" y="26" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" font-weight="700" fill="#176779">网段 1：192.168.1.0/24</text>
+
+  <rect x="176" y="10" width="180" height="24" rx="4" fill="#f7f5ee" stroke="#9b8348"/>
+  <text x="266" y="26" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" font-weight="700" fill="#6b5827">网段 2：192.168.2.0/24</text>
+
+  <rect x="364" y="10" width="180" height="24" rx="4" fill="#f7f5ee" stroke="#9b8348"/>
+  <text x="454" y="26" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" font-weight="700" fill="#6b5827">网段 3：192.168.3.0/24</text>
+
+  <rect x="552" y="10" width="154" height="24" rx="4" fill="#edf4f5" stroke="#94b2ba"/>
+  <text x="629" y="26" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" font-weight="700" fill="#176779">网段 4：192.168.4.0/24</text>
+
+  <!-- Devices -->
+  <!-- PC1 -->
+  <rect x="14" y="96" width="96" height="62" rx="5" fill="#edf4f5" stroke="#176779" stroke-width="1.4"/>
+  <text x="62" y="117" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="700" fill="#20323b">PC1</text>
+  <text x="62" y="135" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11" fill="#20323b">.1.1 /24</text>
+  <text x="62" y="150" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.5" fill="#51626c">GW: .1.254</text>
+
+  <!-- R1 -->
+  <rect x="166" y="96" width="66" height="62" rx="8" fill="#e6f2ef" stroke="#176779" stroke-width="1.7"/>
+  <text x="199" y="125" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14.5" font-weight="700" fill="#176779">R1</text>
+  <text x="199" y="144" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.5" fill="#51626c">边缘</text>
+
+  <!-- R2 -->
+  <rect x="327" y="96" width="66" height="62" rx="8" fill="#e6f2ef" stroke="#176779" stroke-width="1.7"/>
+  <text x="360" y="125" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14.5" font-weight="700" fill="#176779">R2</text>
+  <text x="360" y="144" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.5" fill="#51626c">中间枢纽</text>
+
+  <!-- R3 -->
+  <rect x="488" y="96" width="66" height="62" rx="8" fill="#e6f2ef" stroke="#176779" stroke-width="1.7"/>
+  <text x="521" y="125" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="14.5" font-weight="700" fill="#176779">R3</text>
+  <text x="521" y="144" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.5" fill="#51626c">边缘</text>
+
+  <!-- PC2 -->
+  <rect x="610" y="96" width="96" height="62" rx="5" fill="#edf4f5" stroke="#176779" stroke-width="1.4"/>
+  <text x="658" y="117" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="13" font-weight="700" fill="#20323b">PC2</text>
+  <text x="658" y="135" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11" fill="#20323b">.4.1 /24</text>
+  <text x="658" y="150" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.5" fill="#51626c">GW: .4.254</text>
+
+  <!-- Links -->
+  <line x1="110" y1="127" x2="166" y2="127" stroke="#20323b" stroke-width="2"/>
+  <line x1="232" y1="127" x2="327" y2="127" stroke="#20323b" stroke-width="2"/>
+  <line x1="393" y1="127" x2="488" y2="127" stroke="#20323b" stroke-width="2"/>
+  <line x1="554" y1="127" x2="610" y2="127" stroke="#20323b" stroke-width="2"/>
+
+  <!-- Interface Labels -->
+  <text x="138" y="114" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.2" font-weight="700" fill="#20323b">G0/0/0</text>
+  <text x="138" y="144" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.2" fill="#176779">.1.254</text>
+
+  <text x="255" y="114" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.2" font-weight="700" fill="#20323b">G0/0/1</text>
+  <text x="255" y="144" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.2" fill="#176779">.2.1</text>
+
+  <text x="305" y="114" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.2" font-weight="700" fill="#20323b">G0/0/0</text>
+  <text x="305" y="144" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.2" fill="#176779">.2.2</text>
+
+  <text x="415" y="114" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.2" font-weight="700" fill="#20323b">G0/0/1</text>
+  <text x="415" y="144" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.2" fill="#176779">.3.1</text>
+
+  <text x="466" y="114" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.2" font-weight="700" fill="#8f2d21">G0/0/1</text>
+  <text x="466" y="144" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.2" fill="#8f2d21">.3.2</text>
+
+  <text x="582" y="114" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.2" font-weight="700" fill="#20323b">G0/0/0</text>
+  <text x="582" y="144" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10.2" fill="#176779">.4.254</text>
+
+  <!-- Forward Path Arrow (Top) -->
+  <path d="M199 88 L199 66 L521 66 L521 88" fill="none" stroke="#176779" stroke-width="1.8" marker-end="url(#st-a)"/>
+  <rect x="226" y="50" width="268" height="22" rx="4" fill="#edf4f5" stroke="#176779" stroke-width="1"/>
+  <text x="360" y="65" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" font-weight="700" fill="#176779">去程（目标 4.0/24）：R1→.2.2，R2→.3.2</text>
+
+  <!-- Return Path Arrow (Bottom) -->
+  <path d="M521 166 L521 188 L199 188 L199 166" fill="none" stroke="#b44032" stroke-width="1.8" stroke-dasharray="5 3" marker-end="url(#st-r)"/>
+  <rect x="226" y="176" width="268" height="22" rx="4" fill="#fdf2f0" stroke="#b44032" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="360" y="191" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" font-weight="700" fill="#8f2d21">回程（目标 1.0/24）：R3→.3.1，R2→.2.1</text>
+
+  <!-- Bottom Route Summary Boxes -->
+  <rect x="14" y="210" width="222" height="58" rx="4" fill="#f8fafb" stroke="#94b2ba"/>
+  <text x="125" y="227" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" font-weight="700" fill="#176779">R1 静态路由（下一跳 .2.2）</text>
+  <text x="24" y="244" font-family="SF Mono, Menlo, monospace" font-size="10" fill="#20323b">4.0/24 → 192.168.2.2 (必配)</text>
+  <text x="24" y="259" font-family="SF Mono, Menlo, monospace" font-size="10" fill="#51626c">3.0/24 → 192.168.2.2 (全网补)</text>
+
+  <rect x="249" y="210" width="222" height="58" rx="4" fill="#f8fafb" stroke="#94b2ba"/>
+  <text x="360" y="227" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" font-weight="700" fill="#176779">R2 静态路由（双向枢纽）</text>
+  <text x="259" y="244" font-family="SF Mono, Menlo, monospace" font-size="10" fill="#20323b">1.0/24 → 192.168.2.1 (回PC1)</text>
+  <text x="259" y="259" font-family="SF Mono, Menlo, monospace" font-size="10" fill="#20323b">4.0/24 → 192.168.3.2 (去PC2)</text>
+
+  <rect x="484" y="210" width="222" height="58" rx="4" fill="#f8fafb" stroke="#94b2ba"/>
+  <text x="595" y="227" text-anchor="middle" font-family="Hiragino Sans GB, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11.5" font-weight="700" fill="#176779">R3 静态路由（下一跳 .3.1）</text>
+  <text x="494" y="244" font-family="SF Mono, Menlo, monospace" font-size="10" fill="#20323b">1.0/24 → 192.168.3.1 (必配)</text>
+  <text x="494" y="259" font-family="SF Mono, Menlo, monospace" font-size="10" fill="#51626c">2.0/24 → 192.168.3.1 (全网补)</text>
+</svg>
